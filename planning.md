@@ -8,7 +8,7 @@ It is important to classify various types of posts apart. For example, posts abo
 
 ## Label Definitions
 
-- `artistic_critique` - Primarily contains analysis of the artwork itself and artistic choices (e.g., sound, composition, melody, rhythm, lyrics, genre, production, album song order, comparisons with other artistic works, etc).
+- `artistic_critique` - Primarily contains analysis of the artwork itself and artistic choices (e.g., sound, composition, melody, rhythm, lyrics, genre, production, album song order, artistic evolution, comparisons with other artistic works, etc). Also includes emotions and opinions expressed because of the artwork and artistic choices.
 
 [**Clear Example 1**](https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplxex5):
 
@@ -42,7 +42,7 @@ by Number3rdInTheVoting.
 
 by GuitarzanWSC.
 
-- `external_narrative` - Primarily contains stories or discussion about the broader context (e.g., gossip, celebrity feuds/drama, Billboard charts, sales, reviews, etc.).
+- `external_narrative` - Primarily contains stories or discussion about the broader context (e.g. gossip, celebrity feuds/drama, Billboard charts, sales, reviews, etc.). Includes personal context too, such as discussion about people and situations around the post publisher (e.g. mentions of family, friends, roommates, etc.).
 
 [**Clear Example 1**](https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkxpas):
 
@@ -50,11 +50,11 @@ by GuitarzanWSC.
 
 by ComeOnAndSlang.
 
-[**Clear Example 2**](https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkc7hb):
+[**Clear Example 2**](https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkt8a6):
 
-> I haven't felt this amount of both hyped and concerned since election night exactly one year ago. Let's hope tonight doesn't end with the same feeling of utter disappointment.
+> Haven't heard it yet, but the Taylor sub is weirdly very unhappy with this. It really makes me worried if even the devotees are criticizing it. Still hopeful though!
 
-by thegeecyproject.
+by glasscageheart.
 
 [**Ambiguous Example**](https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpke04g):
 
@@ -64,7 +64,7 @@ by thegeecyproject.
 
 by animefangrant62.
 
-- `fandom_expression` - Primary contains emotional assertions and visceral reactions without much logic or elaboration (e.g., hype, witty remark, meta-joke etc.)
+- `fandom_expression` - Primary contains standalone emotional assertions, visceral reactions, or pure exclamations without much logic or elaboration (e.g., hype, witty remark, meta-joke etc.).
 
 [**Clear Example 1**](https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkcocf):
 
@@ -92,13 +92,15 @@ There will be cases where the labeling is ambiguous. For example, a post may inc
 
 To resolve such cases, follow these guidelines in order:
 
-1. Choose the label that represents the majority of the post's content. When using this criterion, there should be a clear winner.
-2. If there is roughly an equal distribution of post content that can match multiple labels, `artistic_critique` takes priority over `external_narrative`, which takes priority over `fandom_expression`.
+1. Choose the label that represents the at least 2/3 of the post's content. When using this criterion, there should be a clear winner.
+2. If there's roughly an equal distribution of post content that can match multiple labels, and the decision is between `artistic_critique` and `external_narrative`, choose the label that forms the main idea or conclusion reached in the post. For example, if celebrity feuds are cited as the reason for a song's beat, then `artistic_critique` takes precedence.
+3. If there is no clear main idea or conclusion in the post, or if one of the label candidates is `fandom_expression`, use this strict prioritization: `artistic_critique` takes priority over `external_narrative`, which takes priority over `fandom_expression`.
 
 The justification:
 
 1. If a post is overwhelmingly diving into the lyrical and musical content of a song while including just a short phrase with music industry gossip, one would summarize the post as per its artistic discussion. Thus, `artistic_critique` is the clear winner. Such cases are only ambiguous in the strictly speaking, but practically they can be easily disambiguated.
-2. Sometimes, posts (especially large ones) can touch on multiple topics and span multiple labels equally. In this case, there is no clear winner by majority. Instead, one label needs to be prioritized above the rest. `artistic_critique` is often rarer and requires more effort to devise and write (especially in casual social media platforms like Reddit), so it should get the highest priority in an equal-distribution ambiguity. `fandom_expression`s are often purely about expressing opinion, affinity, or hype as per human subjectivity without clear logic, reason, or elaboration. A reader could not reasonably gain knowledge by reading it. Such posts are quite common on casual social media, and don't require much effort to post (instead relying on expressivity instincts). Thus, these should be prioritized last, leaving `external_narrative` in middle.
+2. If a post uses celebrity news as evidence for certain lyrical choices, then clearly the celebrity news plays into the overall argument about lyrical choices. Thus, the main idea in each post is important to consider. However, this sort of analysis doesn't work well with `fandom_expression`s because these can essentially never be used as the central idea of a post - otherwise, now there is justification or elaboration, contradicting what a `fandom_expression` is. If they are used subordinately in the post, then the prioritization in the next step takes care of that.
+3. Sometimes, posts (especially large ones) can touch on multiple topics and span multiple labels equally. In this case, there is no clear winner by majority. Instead, one label needs to be prioritized above the rest. `artistic_critique` is often rarer and requires more effort to devise and write (especially in casual social media platforms like Reddit), so it should get the highest priority in an equal-distribution ambiguity. `fandom_expression`s are often purely about expressing opinion, affinity, or hype as per human subjectivity without clear logic, reason, or elaboration. A reader could not reasonably gain knowledge by reading it. Such posts are quite common on casual social media, and don't require much effort to post (instead relying on expressivity instincts). Thus, these should be prioritized last, leaving `external_narrative` in middle.
 
 ## Data Collection Plan
 

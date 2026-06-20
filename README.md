@@ -12,3 +12,9 @@ For the CodePath course AI201: Applications of AI Engineering
   - Only family friendly posts
 - Labels: `artistic_critique`, `external_narrative`, `fandom_expression`
 - Ambiguity resolution - priority levels due to post effort and abundance for each label
+- Stress testing conclusion:
+  - Boundary btwn `artistic_critique` and `external_narrative` much more critical to sharpen
+  - More frequent ambiguities in that boundary
+  - `fandom_expression` is the unique one because
+    - Its tone is completely different - raw emotion, not meditative or explicative
+    - It is often standalone or gets dominated in content or centrality by the other two

@@ -131,6 +131,20 @@ Multiple metrics are needed because relying on just one gives an incomplete pict
 - A high precision may simply be due to the classifier being overly conservative, perhaps classifying too few samples as a certain label and inflating the precision.
 - A high recall may simply be due to the classifier being overly zealous, perhaps classifying too many samples as a certain label and inflating the recall.
 
-- ## AI Tool Plan
+## Definition of Success
 
-[TODO]
+In an ideal world, overall accuracy, per-class accuracy, recall, precision, and F1 would all be 1. However, this is practically not possible and is even a little suspicious. Thus, a threshold value needs to be chosen for all the metrics. Purely guessing one of the three labels leads to a baseline accuracy of 33%, so the threshold must be meaningfully greater than this to yield a useful classifier. A good value I've decided to aim for is **0.75** for all the four metrics. I would personally be satisfied with a classifier achieving this level of performance, but to deploy the classifier in the real world, I would aim for a higher threshold of around 0.9 so that users would rarely have to encounter mistakes.
+
+## AI Tool Plan
+
+### Label Stress-Testing
+
+I will use AI to generate 5-10 posts that sit on the boundaries between labels to test whether the definitions are specific enough to address such ambiguous cases. This will allow me to revise my definitions if I find that I can't reasonably classify some of these generated posts.
+
+### Annotation Assistance
+
+Labeling all 200 samples by myself may be difficult, but I can speed that up a bit by having an LLM annotate some of the posts, especially those that are easy to classify. I will have the LLM mark its annotations by via a specific value in a specific column in the CSV data, for example "llm" for the "annotator" column. This will help me review the LLM-annotated samples and disclose easily where and how much AI helped me with this task.
+
+### Failure Analysis
+
+After running the classifier for the first time, identifying the failure patterns in the first place may be difficult alone, so I will ask an AI tool to surface these patterns. Perhaps there is a subtle direction to the failures (e.g. a lot of misclassified `artistic_critique`s being labeled as `external_narrative`s). I will verify the patterns the LLM identifies. Together this flow will help me speed up my failure analysis and evaluation report sections while ensuring integrity by using my own judgement for approval.

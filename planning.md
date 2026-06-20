@@ -6,16 +6,6 @@ I chose a [Reddit megathread](https://www.reddit.com/r/popheads/comments/7brx3o/
 
 It is important to classify various types of posts apart. For example, posts about the actual lyrics or music are fundamentally different than posts about the news surrounding an album drop, which are both fundamentally different than posts that merely contain emotional or hyped-up text. The first type may lead to in-depth, analytical discussion. The second type may involve stats and numbers about fame and success. The third type are often standalone statements that often wouldn't start a sub-discussion. Furthermore, different people may be interested in different categories, so from a forum's perspective, this sort of pre-categorization could pave the way for filtering options to allow users to find the types of posts they want.
 
-## Post Selection
-
-Not all posts from the megathread will be chosen. Specifically, posts:
-
-- Must be direct replies to the original post (no replies to replies)
-- Must be unique by poster's username
-- Must be loosely related to the main topic
-- Must be family-friendly
-- Must _not_ be deleted
-
 ## Label Definitions
 
 - `artistic_critique` - Primarily contains analysis of the artwork itself and artistic choices (e.g., sound, composition, melody, rhythm, lyrics, genre, production, album song order, comparisons with other artistic works, etc).
@@ -96,7 +86,51 @@ by InfernalSolstice.
 
 by weareallmoist.
 
-## Ambiguity Resolution Guide
+## Addressing Ambiguous Edge Cases
+
+There will be cases where the labeling is ambiguous. For example, a post may include both gossip from the music industry and a brief note about the lyrical structure of a song. Should that be classified as `artistic_critique` or `external_narrative`?
+
+To resolve such cases, follow these guidelines in order:
 
 1. Choose the label that represents the majority of the post's content. When using this criterion, there should be a clear winner.
 2. If there is roughly an equal distribution of post content that can match multiple labels, `artistic_critique` takes priority over `external_narrative`, which takes priority over `fandom_expression`.
+
+The justification:
+
+1. If a post is overwhelmingly diving into the lyrical and musical content of a song while including just a short phrase with music industry gossip, one would summarize the post as per its artistic discussion. Thus, `artistic_critique` is the clear winner. Such cases are only ambiguous in the strictly speaking, but practically they can be easily disambiguated.
+2. Sometimes, posts (especially large ones) can touch on multiple topics and span multiple labels equally. In this case, there is no clear winner by majority. Instead, one label needs to be prioritized above the rest. `artistic_critique` is often rarer and requires more effort to devise and write (especially in casual social media platforms like Reddit), so it should get the highest priority in an equal-distribution ambiguity. `fandom_expression`s are often purely about expressing opinion, affinity, or hype as per human subjectivity without clear logic, reason, or elaboration. A reader could not reasonably gain knowledge by reading it. Such posts are quite common on casual social media, and don't require much effort to post (instead relying on expressivity instincts). Thus, these should be prioritized last, leaving `external_narrative` in middle.
+
+## Data Collection Plan
+
+I will manually copy-paste suitable posts from the Reddit megathread in a CSV file, additionally storing not just the label but also the link and poster username for future discovery and uniqueness enforcement purposes.
+
+Not all posts from the megathread will be chosen. Specifically, posts:
+
+- Must be direct replies to the original post (no replies to replies)
+- Must be unique by poster's username
+- Must be loosely related to the main topic
+- Must be family-friendly
+- Must _not_ be by deleted users
+
+I will collect around 200 samples, aiming to distribute the 3 labels evenly - thus, around 60-70 samples per label. Some labels may be harder to find samples for than others, leading to them being underrepresented. In such a case, I will broaden my search (e.g., scrolling much farther down) in an attempt to find a more even distribution of posts. If that doesn't work, I will consider modifying the label definitions and/or boundaries, re-labeling the samples as needed afterward.
+
+## Evaluation Metrics
+
+I will use the following evaluation metrics:
+
+- **Overall accuracy** - Measure of how many overall samples the model classified correctly over the total number of samples - the simplest metric about overall classification quality, though misleading if used alone.
+- **Per-class accuracy** - Measure of how many samples in each class the model correctly predicted. Gives a more complete picture than overall accuracy.
+- **Precision** - Given all the samples the model predicted for a certain label, what fraction are actually in that label? High precision and low recall means that the model is conservative, needing higher confidence but under-classifying for that label.
+- **Recall** - Given all the samples for a certain label, what fraction did the model classify as that label? High recall and low precision means the model is zealous, needing lower confidence and over-classifying for that label.
+- **F1** - Harmonic mean of precision and recall. Since precision and recall are both difficult to nail, this single number distinguish a great classifier from a good one.
+
+Multiple metrics are needed because relying on just one gives an incomplete picture:
+
+- A high overall accuracy may hide disastrously bias due to data imbalance and/or low accuracy for a particular class.
+- A per-class accuracy gives a better picture, but it also says nothing about the classifier's conservativeness or zealousness. [TODO]
+- A high precision may simply be due to the classifier being overly conservative, perhaps classifying too few samples as a certain label and inflating the precision.
+- A high recall may simply be due to the classifier being overly zealous, perhaps classifying too many samples as a certain label and inflating the recall.
+
+- ## AI Tool Plan
+
+[TODO]

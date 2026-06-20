@@ -18,3 +18,4 @@ For the CodePath course AI201: Applications of AI Engineering
   - `fandom_expression` is the unique one because
     - Its tone is completely different - raw emotion, not meditative or explicative
     - It is often standalone or gets dominated in content or centrality by the other two
+- Had to use Google Sheets since CSV extension automatically squeezed text into one paragraph

@@ -42,7 +42,7 @@ by Number3rdInTheVoting.
 
 by GuitarzanWSC.
 
-- `external_narrative` - Primarily contains stories or discussion about the broader context (e.g. gossip, celebrity feuds/drama, Billboard charts, sales, reviews, etc.). Includes personal context too, such as discussion about people and situations around the post publisher (e.g. mentions of family, friends, roommates, etc.).
+- `external_narrative` - Primarily contains stories or discussion about the broader context (e.g. gossip, celebrity feuds/drama, Billboard charts, sales, reviews, etc.). Includes personal context too, such as discussion about people and situations around the post publisher (e.g. mentions of family, friends, roommates; decisions to buy the album; etc.).
 
 [**Clear Example 1**](https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkxpas):
 

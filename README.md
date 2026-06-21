@@ -1,6 +1,51 @@
-# ai201-project3-takemeter
+# TakeMeter
 
-For the CodePath course AI201: Applications of AI Engineering
+_Krish A. Patel_
+
+_CodePath AI201: Applications of AI Engineering Project 3 (Summer 2026)_
+
+[TODO] Intro - community, what was given, what I did (annotation, reports)
+
+## Tech Stack
+
+## Setup
+
+[TODO] ADD THE IPYNB
+
+### Google Colab Notebook
+
+1. Download the [] Jupyter notebook.
+2. Go to [Google Colab](https://colab.research.google.com/).
+3. Go to **File** > **Upload notebook**, and select the downloaded notebook.
+4. Go to **Runtime** > **Change runtime type**, and make sure that **Hardware accelerator** is set to **T4 GPU**. Click **Save**.
+5. Get a free [Groq](https://console.groq.com/keys) API key.
+6. Go to **Secrets** (key icon on the left), set "GROQ_API_KEY" to your Groq API key, and enable **Notebook access**.
+
+### (Optional) See Data Overview
+
+1. Create a virtual environment:
+
+```bash
+python3 -m venv .venv
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Run all the cells in [`data/data_overview.ipynb`](./data/data_overview.ipynb).
+
+## Labels
+
+## Results
+
+### Baseline
+
+### Fine-Tuned
+
+## Other Takeaways
 
 ## Notes
 
@@ -28,27 +73,44 @@ For the CodePath course AI201: Applications of AI Engineering
 
 - Zero-shot baseline:
 
-Label distribution:
-
-```
-artistic_critique     89
-external_narrative    84
-fandom_expression     40
-```
-
 Classification report:
 
+Fixed! A simple copy-paste error that caused the LLM to skip the general instructions and immediately resort to the ambiguity resolution steps, which turned out to be so algorithmic that it got perfect accuracy on the 32 samples.
+
+- Fine-tuned:
+  - No hyperparams changed at first (works well for 100-500 samples)
+  - But needed to due to abnormally low accuracy
+  - Optimal number of epochs experiment - took 25 min to run
+    - Distilbert already returned the best epoch's metrics, so plateaus would be more common than dips
+
+Results comparison:
+
 ```
-🎯 Baseline accuracy: 1.000  (evaluated on 32/32 parseable responses)
+==================================================
+RESULTS COMPARISON
+==================================================
+Model                               Accuracy
+---------------------------------------------
+Zero-shot baseline (Groq)              0.968
+Fine-tuned DistilBERT                  0.844
+---------------------------------------------
 
-Per-class metrics (baseline):
-                    precision    recall  f1-score   support
+Fine-tuning regression: 0.124
+```
 
- artistic_critique       1.00      1.00      1.00        14
-external_narrative       1.00      1.00      1.00        12
- fandom_expression       1.00      1.00      1.00         6
+Eval results:
 
-          accuracy                           1.00        32
-         macro avg       1.00      1.00      1.00        32
-      weighted avg       1.00      1.00      1.00        32
+```
+{
+  "baseline_accuracy": 0.9677,
+  "finetuned_accuracy": 0.8438,
+  "improvement": -0.124,
+  "test_set_size": 32,
+  "label_map": {
+    "artistic_critique": 0,
+    "external_narrative": 1,
+    "fandom_expression": 2
+  },
+  "model": "distilbert-base-uncased"
+}
 ```

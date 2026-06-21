@@ -149,7 +149,6 @@ I will collect around 200 samples, aiming to distribute the 3 labels evenly - th
 I will use the following evaluation metrics:
 
 - **Overall accuracy** - Measure of how many overall samples the model classified correctly over the total number of samples - the simplest metric about overall classification quality, though misleading if used alone.
-- **Per-class accuracy** - Measure of how many samples in each class the model correctly predicted. Gives a more complete picture than overall accuracy.
 - **Precision** - Given all the samples the model predicted for a certain label, what fraction are actually in that label? High precision and low recall means that the model is conservative, needing higher confidence but under-classifying for that label.
 - **Recall** - Given all the samples for a certain label, what fraction did the model classify as that label? High recall and low precision means the model is zealous, needing lower confidence and over-classifying for that label.
 - **F1** - Harmonic mean of precision and recall. Since precision and recall are both difficult to nail, this single number distinguish a great classifier from a good one.
@@ -157,13 +156,12 @@ I will use the following evaluation metrics:
 Multiple metrics are needed because relying on just one gives an incomplete picture:
 
 - A high overall accuracy may hide disastrously bias due to data imbalance and/or low accuracy for a particular class.
-- A per-class accuracy gives a better picture, but it also says nothing about the classifier's conservativeness or zealousness. [TODO]
 - A high precision may simply be due to the classifier being overly conservative, perhaps classifying too few samples as a certain label and inflating the precision.
 - A high recall may simply be due to the classifier being overly zealous, perhaps classifying too many samples as a certain label and inflating the recall.
 
 ## Definition of Success
 
-In an ideal world, overall accuracy, per-class accuracy, recall, precision, and F1 would all be 1. However, this is practically not possible and is even a little suspicious. Thus, a threshold value needs to be chosen for all the metrics. Purely guessing one of the three labels leads to a baseline accuracy of 33%, so the threshold must be meaningfully greater than this to yield a useful classifier. A good value I've decided to aim for is **0.75** for all the four metrics. I would personally be satisfied with a classifier achieving this level of performance, but to deploy the classifier in the real world, I would aim for a higher threshold of around 0.9 so that users would rarely have to encounter mistakes.
+In an ideal world, overall accuracy, precision, recall, and F1 would all be 1. However, this is practically not possible and is even a little suspicious. Thus, a threshold value needs to be chosen for all the metrics. Purely guessing one of the three labels leads to a baseline accuracy of 33%, so the threshold must be meaningfully greater than this to yield a useful classifier. A good value I've decided to aim for is **0.75** for all the four metrics. I would personally be satisfied with a classifier achieving this level of performance, but to deploy the classifier in the real world, I would aim for a higher threshold of around 0.9 so that users would rarely have to encounter mistakes.
 
 ## AI Tool Plan
 

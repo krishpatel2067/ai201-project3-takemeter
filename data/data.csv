@@ -1,9 +1,601 @@
-id,text,label,author,link,annotator,notes
-1,"I'm not going to go track by track because I don't want to rain on the parade of those who are loving this.So I will just say that as a longtime Taylor Swift fan, this is the album I have to sit out. Her last three albums are 9s or 10s in my book, and ""Fearless"" is solid too, but this... This, I just don't get.On the positive end, ""Getaway Car"" is the standout, IMHO. It has the best lyrics of the album -- the one moment where I see glimpses of the songwriter I've always loved. I like the chorus. The verses are OK. But I hate the bridge. Wow, am I over Bonnie & Clyde references. The bridge feels cheesy and cliche in the middle of an otherwise fairly solid song. Of what we already knew, ""...Ready For It?"" still has some fun, catchy moments (except the verses, which I hate), but... still not a song I love. Those verses, man.Beyond that... I am honestly just so disappointed. I even tried to go in with low expectations. But I thought there'd be something I'd love. I've listened twice and I just don't connect with this album. There isn't a single song I just unabashedly like from start to finish. Not even love, but like. I like parts of a few songs but nothing as a whole.The lyrics are weak, the production seems way overdone on many of the tracks and I just don't feel what she's going for. I don't feel much of anything most of the time, which is not something I expect from Taylor Swift. She's a masterful storyteller, able to capture any emotion or moment in song, and her music has always reached people in a deeply emotional way. I don't feel that this time. This album feels empty to me. And often cringey.I expect downvotes; it's cool, I accept it. But as a longtime Swiftie who's baffled tonight, I just needed to throw this out into the void. For those who are loving it, enjoy. I'll give it another listen another day. But I don't get this record. At all.",artistic_critique,MissyBee37,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplxex5,human1,in planning.md
-2,"This album is gonna sound extremely dated in like six months, she should've stuck with a more traditional sound and stop trend chasing so much.EDIT: Getaway Car being the clear exception, amazing song. God bless Jack Antonoff.",artistic_critique,Number3rdInTheVoting,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkwhq0,human1,in planning.md
-3,"Even upon first listen, ""Getaway Car"" became my favorite song of the year. Its got everything I want from Taylor and Jack: 'this love couldn't last' lyrics, a propulsive beat, and Jack's 80s production. I don't care if it is really close to Out Of The Woods.And that outro? Jee-zus. Killed me.",artistic_critique,GuitarzanWSC,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpn7hlc,human1,in planning.md
-4,"No one is going to believe me, but I have a friend whose brother's coworker briefly dated Taylor Swift. He said that on their first date they went to a restaurant and Taylor ordered two different bowls of soup and mixed them together one spoonful at a time before eating both bowls mixed together as one soup",external_narrative,ComeOnAndSlang,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkxpas,human1,in planning.md
-5,"Haven't heard it yet, but the Taylor sub is weirdly very unhappy with this. It really makes me worried if even the devotees are criticizing it. Still hopeful though!",external_narrative,glasscageheart,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkt8a6,human1,in planning.md
-6,"This is the first time I've been witness to a Taylor Swift album cycle from it's very beginning til now and I have to say what a wild ride it's been. From the rumours of the RFI remix to the theory's about the snake being a dragon and how that ties into the eclipse. As someone who's big into conspiracy theories this has been a blast and I hope to god the album is good. 1989 is my favourite album of all time and I know this won't live up to it, but man I hope it's even half as good.Also please let End Game be a bop because if I'm gonna have to listen to the same Ed Sheeran song over and over on the radio, at least let it feature my queen. Also Future.",external_narrative,animefangrant62,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpke04g,human1,in planning.md
-7,I’ve already broken up with my boyfriend in preparation.,fandom_expression,LittleRhodey,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkcocf,human1,in planning.md
-8,I had a dream last night where I heard Dress and it was a complete and total BOP and it was one of the best songs she ever didHoping my dream is true
+id,text,author,link,label,annotators,notes
+1,"I'm not going to go track by track because I don't want to rain on the parade of those who are loving this.
+
+So I will just say that as a longtime Taylor Swift fan, this is the album I have to sit out. Her last three albums are 9s or 10s in my book, and ""Fearless"" is solid too, but this... This, I just don't get.
+
+On the positive end, ""Getaway Car"" is the standout, IMHO. It has the best lyrics of the album -- the one moment where I see glimpses of the songwriter I've always loved. I like the chorus. The verses are OK. But I hate the bridge. Wow, am I over Bonnie & Clyde references. The bridge feels cheesy and cliche in the middle of an otherwise fairly solid song. Of what we already knew, ""...Ready For It?"" still has some fun, catchy moments (except the verses, which I hate), but... still not a song I love. Those verses, man.
+
+Beyond that... I am honestly just so disappointed. I even tried to go in with low expectations. But I thought there'd be something I'd love. I've listened twice and I just don't connect with this album. There isn't a single song I just unabashedly like from start to finish. Not even love, but like. I like parts of a few songs but nothing as a whole.
+
+The lyrics are weak, the production seems way overdone on many of the tracks and I just don't feel what she's going for. I don't feel much of anything most of the time, which is not something I expect from Taylor Swift. She's a masterful storyteller, able to capture any emotion or moment in song, and her music has always reached people in a deeply emotional way. I don't feel that this time. This album feels empty to me. And often cringey.
+
+I expect downvotes; it's cool, I accept it. But as a longtime Swiftie who's baffled tonight, I just needed to throw this out into the void. For those who are loving it, enjoy. I'll give it another listen another day. But I don't get this record. At all.",MissyBee37,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplxex5,artistic_critique,human1,in planning.md
+2,"This album is gonna sound extremely dated in like six months, she should've stuck with a more traditional sound and stop trend chasing so much.
+
+EDIT: Getaway Car being the clear exception, amazing song. God bless Jack Antonoff.",Number3rdInTheVoting,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkwhq0,artistic_critique,human1,in planning.md
+3,"Even upon first listen, ""Getaway Car"" became my favorite song of the year. Its got everything I want from Taylor and Jack: 'this love couldn't last' lyrics, a propulsive beat, and Jack's 80s production. I don't care if it is really close to Out Of The Woods.
+
+And that outro? Jee-zus. Killed me.",GuitarzanWSC,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpn7hlc,artistic_critique,human1,in planning.md
+4,"No one is going to believe me, but I have a friend whose brother's coworker briefly dated Taylor Swift. He said that on their first date they went to a restaurant and Taylor ordered two different bowls of soup and mixed them together one spoonful at a time before eating both bowls mixed together as one soup",ComeOnAndSlang,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkxpas,external_narrative,human1,in planning.md
+5,"Haven't heard it yet, but the Taylor sub is weirdly very unhappy with this. It really makes me worried if even the devotees are criticizing it. Still hopeful though!",glasscageheart,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkt8a6,external_narrative,human1,in planning.md
+6,"This is the first time I've been witness to a Taylor Swift album cycle from it's very beginning til now and I have to say what a wild ride it's been. From the rumours of the RFI remix to the theory's about the snake being a dragon and how that ties into the eclipse. As someone who's big into conspiracy theories this has been a blast and I hope to god the album is good. 1989 is my favourite album of all time and I know this won't live up to it, but man I hope it's even half as good.
+
+Also please let End Game be a bop because if I'm gonna have to listen to the same Ed Sheeran song over and over on the radio, at least let it feature my queen. Also Future.",animefangrant62,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpke04g,external_narrative,human1,in planning.md
+7,I’ve already broken up with my boyfriend in preparation.,LittleRhodey,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkcocf,fandom_expression,human1,in planning.md
+8,"I had a dream last night where I heard Dress and it was a complete and total BOP and it was one of the best songs she ever did
+
+Hoping my dream is true",InfernalSolstice,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkg9l6,fandom_expression,human1,in planning.md
+9,Is...is something wrong with me? Cause “This is Why We Can’t Have Nice Things” is a bop and I am LIVING for it,weareallmoist,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplnquc,fandom_expression,human1,in planning.md
+10,"The old Popheads can’t come to the phone right now. Why?
+
+BECAUSE THEYRE LIVING",sassafrassloth,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkbqiw,fandom_expression,claude_code,
+11,I'm so ashamed. Yesterday I bought this in itunes. So today I got in my car and my crappy phone had only downloaded three songs. And I was near a Target... so I bought it again....,limecakes,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpnggg1,external_narrative,claude_code,
+12,"In my opinion, this album is one of the most aggressively bad albums I've ever heard. The songs are overproduced, repetitive and dull. Taylor's signature songwriting prowess is completely absent in this """"""edgy"""""" album where the same two concepts, reputation and infatuation, are repeated over and over and over again.",Glennishill,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmia8v,artistic_critique,claude_code,
+13,DELICATE >,pastaandpizza,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmm0tk/,fandom_expression,claude_code,
+14,"Ok popheads
+
+Should I buy it?
+
+Disclaimer: this would be the first time I sent money Taylor's way but I'm very tempted.",Saguaro-plug,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpn49sp,external_narrative,claude_code,
+15,"Hype aside, I’m really impressed with the record. I’m not sure if it’ll age as well as 1989 (which is manicured to feel timeless) but it’s actually sharp and unexpected and oddly personal.
+
+Those fans saying this was better than Red need to get their ears checked!",TheSubparWriter,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl3fyb,artistic_critique,claude_code,
+16,Mark My Words. End Game will be an 8-week #1 Billboard Hot 100 Song. Thank you. Bye.,Goguma12,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm2i5z/,external_narrative,claude_code,
+17,MY BODY WAS NOT READY FOR DELICATE!,marsblyr,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplycgd,fandom_expression,claude_code,
+18,In two to three years I would like to see how would we look back at this album.,ministerofinjustice,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm5leo,external_narrative,claude_code,
+19,Did we all forget that Witness surprisingly didn't leak as well? But I am thoroughly impressed that she even pushed back the NZ iTunes to really have a WW release. wow.,andrewlay,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkfg2z/,external_narrative,claude_code,
+20,"The album is okay to bad. The only clear stand out is I Did Something Bad. It should be the second single, would easily #1
+
+But we all know one of the worst songs is going to be the next single and will sadly top the charts for 12 weeks. End (my) Game.",guilhermehentz,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl4v4g,artistic_critique,claude_code,
+21,"I honestly think people should listen to it again and then pass judgement because I honestly hated it on first listen but after listening again I really appreciated the songs more. Sometimes we have to be positive about albums and just because we don’t like some parts of the song we just shut it down completely. But of course if you are really not feeling it, it’s ok.
+
+Imo the album has good instrumentals and beats and lyrics were less fairy tale, cheesy stuff. It’s growing on me and compared to witness this is much better.","
+harlequinx9",https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpls5fk/,artistic_critique,claude_code,
+22,This is... not good. I'm going back to 1989.,17nova,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm00xc,artistic_critique,claude_code,
+23,Only heard the album once so far but I'm surprised there is no love for New Years Day. End Game is a hit too.,epileptic_disco,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm7b35,artistic_critique,claude_code,
+24,"So I listened to it twice and I have my thoughts.
+
+I’m just going to say personally that this isn’t Taylor’s best work and I’m confused why people were even saying that. Majority of the songs are pretty generic and over-produced. Are they catchy? Sure. That doesn’t always mean a good a thing. I do like some songs though. I just hope next album that she really gets back to her better lyrics because when saying her self titled has way better writing than this is just weird being that she was 14 when writing that album and she is now basically 28. Maturity is lacking I guess is what I’m saying.
+
+Anyway the songs I personally liked or can see myself replaying is End Game (which was shocking, but I personally liked the flow of it), Don’t Blame Me, Getaway Car, Dancing With Our Hands Tied, Call It What You Want, and King Of My Heart.
+
+Does anyone feel like New Year’s Day is a rough draft? I don’t know just something seems off like she had more to add, but didn’t.
+
+Can I just say that I hope future wise that Taylor personally takes some self responsibility if she’s going to talk about past drama because personally it really has just ended looking very childish and petty musically. Just brings down the talent she does have.",Foodandmakeup12,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplt6hs,artistic_critique,claude_code,
+25,"Delicate, Getaway Car, Dancing with our Hands Tied, and Call it What You Want are giving me life.
+
+I can’t figure out New Years Day as the album closer. I don’t dislike the song but it doesn’t seem to fit at all. I wish the album just ended with CIWYW.",bakerbrokebro,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmq28v,artistic_critique,claude_code,
+26,"Okay yall her are my thoughts. Even though I am labelled as a ""taylor hater"" by some crazy stans I think I am very fair.
+
+Great Songs: Don't Blame Me, Delicate, Dancing With Our Hands Tied
+
+Good Songs: Getaway Car, Dress, So It Goes...
+
+Average Songs: Call It What You Want, End Game, New Year's Day,
+
+Below Average Songs: ...Ready For It?, I Did Something Bad, Look What You Made Me Do, King Of My Heart
+
+Bad Songs: Gorgeous, This Is Why We Can't Have Nice Things
+
+Overall: The album sonically is a double edged sword. It is truly the star of the album, but is also the downfall for some of the lowest points of the album. Taylor's experimenting with vocal effects pays off for majority of the songs and really contributes to making certain songs as good as they are. Taylor lyrically has some strong points and her pop song writing has improved, but consistency is still an issue.
+
+Will this album convert non Taylor fans? Maybe a couple songs will. Will this album be received by Taylor fans well? For the most part. Will critics rave about this album as much as they did with 1989? Nope. Does this album have some of her best songs? Yes. Does this album have some of her worst songs? Yes.
+
+This album has put Taylor on a path I am excited to see her explore deeper. 7/10",JunkyGS,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl135v,artistic_critique,claude_code,
+27,Wow this album is not good. I was hoping for something in the vein of 1989 and this is... not.,cremebrulee_cody,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkwnqw,artistic_critique,claude_code,
+28,"I covered my mouth at ""I'm not the only friend you've lost lately"" Damn girlllllll
+
+Lol this song has highs and lows tbh Generally it's an okay track but the use of shady, the actual title and the snort laugh.... is so cringe but hey, it has amusement value",Bikerjacket,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl0qip,artistic_critique,claude_code,
+29,So when's her tour...?,zomgz0mbie,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplb2mp,external_narrative,claude_code,
+30,This album is pretty great. After a couple listens I can safely say that I enjoy the majority of it. It harken bsck to early 2010s production of pop while also sounding modern. Dress is a bop and sounds like a Carly Rae Jepson song,Zjmw,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplwefc,artistic_critique,claude_code,
+31,New Years Day is going straight into my Christmas playlist.,shhhneak,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplxhyz,external_narrative,claude_code,
+32,"This album is only just ‘fine’ for me so far. I don’t think I’ll end up liking it more than Red or 1989, but we shall see - I feel like some tracks may have much longer replay value than others but it’s all just way too early to tell for me.",szeto326,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplygy6,artistic_critique,claude_code,
+33,"WHAT EVEN IS TODAY??? Reputation leaks, our house was sparking/smoking (thought it was on fire), and now I'm on my way to see my close friend! She's been in Venice for almost 12 months. What a day! 😭",sapphire1921,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm0x83,external_narrative,claude_code,
+34,The whole album is now out there in HQ.,animefangrant62,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkumgx,external_narrative,claude_code,
+35,"Getaway Car has to be a single, it's such a quintessential Taylor bop",angusaditus,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkwhfk,artistic_critique,human1,hard
+36,"It's funny that most of this album is referencing the KimYe incident and a new relationship. Most of it has an industrial (very poppy) / trap / hiphop vibe, john vernon / bon iver vocal styles at time, sing song rap style - or should i say singing in a pseudo rapping style.
+
+It's like her attempt at making a Kanye record. It's crazy how much Kanye has inspired her somehow. Even down to she had a sweater at that fan viewing with REP REP REP on the back, just like kanye's merch - same/similar font too.",meowcarter,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkwhqc,external_narrative,human1,
+37,"Okay this beat nice on Dress, slay me Tay (i feel weird saying this uhhh)",Assassinationday,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkzhra,fandom_expression,human1,
+38,DANCING WITH OUR HANDS TIED IS A BANGERRRR,awryj,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl2lrx,fandom_expression,human1,
+39,"FINALLY got to listen to it. After one listen I did something bad, don’t blame me, getaway car, and dress are my favorites. New Year’s Day is good but it doesn’t quite fit on the album like other people have said. I even enjoyed TIWWCHNT 😂 it has a very ‘we are never getting back together’ feel",MandaBanana,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplml0e,artistic_critique,human1,
+40,"I really wanted to like the album but it sounds kinda uninspired. like most songs sound like generic electronic music circa 2013. :/ also im not a fan of the heavy autotune.
+
+edit: I do like Delicate and Call it what you want though.",doublepoly123,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplw1nx,artistic_critique,human1,
+41,Drake should've been in place of Future,Jennica,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkx6e8,artistic_critique,human1,
+42,"It's a pretty good album, the singles are on a lyrical level probably among the five worst songs on the album so that was a nice surprise. Getaway Car is probably my favorite song on the album, LWYMMD, RFI & This Is Why We Can't Have Nice Things are probably my least favorite songs. I've gotta listen to it a few more times but I see it as a solid 6-weak 7 right now.",VincentOfGallifrey,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkxguj,artistic_critique,human1,
+43,"""They're burning all the witches even if you aren't one / So, light me up, light me up, light me up, go ahead and light me up"" from 'I Did Something Bad' reminds me of ""But I took your matches before fire could catch me so don't look now / I'm shining like fireworks over your sad empty town"" from 'Dear John'.
+
+Needless to say, I Did Something Bad is definitely going to be one of my favourites, even though the post-chorus noise is a bit ear-grating.",urdeadcool,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpky00t,artistic_critique,human1,
+44,Hope it's released on Spotify tonight. Anyone think that it will?,hashi93,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplwwke,external_narrative,human1,
+45,iconic.,IDidSomethingBadTS,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm25a1,fandom_expression,human1,
+46,"Okay, asking for leaks is bad I just really want confirmation if there is a leak cause I'm so confused lol So yes or nah?",Bikerjacket,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkri82,external_narrative,human1,
+47,The record is quite angry and goes hard and i like it ! Its not what we expected,moi_245,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkx0gd,artistic_critique,human1,
+48,"One interesting thing I've noticed, it seems like this is the first album she's done without any songs as the sole songwriter. I wonder if that was a conscious decision",raiseitup,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkyacz,artistic_critique,human1,
+49,Feminist anthem I️ Did Something Bad incoming,wanbancos,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkzxsu,fandom_expression,human1,
+50,"The fact that she made RFI the 2nd single over something like End Game and Getaway Car. She better still make them singles tho, and then Delicate for that 5th single to end the era",angusaditus,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl20jl,artistic_critique,human1,
+51,So much to process I can’t even form an opinion,Giants41,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl2khq,fandom_expression,human1,
+52,"Alright, so what I'm getting from these comment is that it is a decent album, maybe better than expected, but it won't win any awards? BUT at the same time we could get some real interesting stuff in the future because the bangs bang hard as hell?
+
+If so, then I'm content with that. I love Tay with all my heart but I can take a loss if it happens, since this loss seems like it was a hard fought game.",McIgglyTuffMuffin,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl44yo,external_narrative,human1,
+53,Ehh a little dissapointed there's nothing instant for me like blank space and style but i do like Hands tied and dress. New Years is cute too. Everything else is pretty meh imo excluding the pre released songs.,CharlieBerm,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpld0ry,artistic_critique,human1,
+54,I am on track 5 and each song so far feels like an entirely different sound but also reminiscent of songs that have come in the past. Didn't recognize Ed's voice on End game at first.,marsblyr,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dply8vz,artistic_critique,human1,
+55,I really hope pitchfork throws up a review but i just feel they wont. Theyve had their say on a few songs and thats probably where they will leave it,NYNM2017,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmuecb,external_narrative,human1,
+56,Is it cohesive though?,NikMaria,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpn8mrx,artistic_critique,human1,
+57,END GAME OH WE LOVE R&B TAYLOR.,impeccabletim,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkvsse,fandom_expression,human1,
+58,I LOVE Delicate. It's soo good😍,MisguidedNPC,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkvqdo,fandom_expression,human1,
+59,"I think Getaway Car, Dancing With Our Hands Tied, and Dress are the standouts for me - and opposite, I passionately hate End Game and This Is Why We Can't Have Nice Things. The other songs are kind of fine but having aspects I'm not into... they might grow on me? I think I actually prefer more of the Antonoff produced songs but the true bangers are the Max Martin and Shellback tunes.",venividivicivino,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkwzu0,artistic_critique,human1,
+60,Album is out. A person from France posted a photo of delivered CD in Taylor's subreddit.,shy247er,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkhjja,external_narrative,human1,
+61,"I haven’t heard the whole thing yet (who the hell leaks albums one song at a time?) but what I’ve heard so far is really underwhelming.
+
+She keeps doing that weird half-singing half-rapping thing on most songs, and it just doesn’t suit her at all. The production is also really boring on some songs- Dancing with our Hands Tied is the worst offender so far. The synths sound like they could be from literally any generic dance track from the last decade.
+
+Some of the lyrics continue to be all over the place in terms of quality. Dress has a couple of really nice lines: “and if I get burned, at least we were electrified” 🔥 🔥 🔥 but also some awful clunkers that try and fail to be sexy or engaging like “carve my name into the bed post/ cause I don’t want you as a best friend” (lol what?!)
+
+There’s also the fact that, at least in the songs I’ve heard so far, she isn’t showing any growth or maturity. For an album that’s supposed to be addressing her “Reputation”, it just talks about the same things she does in every single album: being in love, finding the perfect boy, etc. And there’s nothing wrong with that! She’s met someone great and it’s okay for her to write songs about it. But I was hoping for more songs about her relationship to the media and her feuds, not the same thing she does on every album. (Maybe those are the songs o haven’t heard yet, though?)
+
+Overall I’m super underwhelmed at the moment. I’m hoping that the album will make more sense when I hear it from start to finish, but right now I’m not optimistic.",Daydream_machine,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkv4r8,artistic_critique,human1,
+62,Getaway Car sounds like a B-side from Bleachers - Gone Now.,kfitzy10,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl46ux,artistic_critique,human1,
+63,u know how u have throwaway reddit accounts...like that but with an album,-Me_NotSure,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplg59b,artistic_critique,human1,
+64,"I have to admit, I like the album a LOT more than I thought I would based upon the 3 singles.
+
+Is it her best? Personally I don't think so, but I like it a lot and I'll probably have it on repeat for a while.",IHateMyParrot,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpli6g8,artistic_critique,human1,
+65,I may or may not have already listened to Getaway Car 32 times.,milkkyu,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplwira,fandom_expression,human1,
+66,hahaha the trending hashtag on Twitter is misspelled. Either the stans can't spell or the bots can't spell,exh78,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm1dvy,external_narrative,human1,
+67,"Props to Taylor and her producers to always knowing which song to copy from. Without You by Lana for Wildest Dreams and now Never Be Like You by Flume for Delicate. This is a little bit of shade but also an honest compliment, I like Taylor's version more.
+
+Also I Did Something Bad sounds like a Britney song and someone said TIWWCHNT sounds like an Avril Lavinge song so that's that.",SameOlMistake,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm28od,artistic_critique,human1,
+68,"Okay everyone is hating on So It Goes... but honestly it is my favourite track on the album, coming from someone who isn't exactly the greatest fan of Taylor.",MaydayPVZ,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpnnb55/,artistic_critique,human1,hard; in planning.md
+69,NOT Future's verses are better than Taylor's I'm dead,what_I_meme,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkxto6,fandom_expression,human1,
+70,Is anything like Clean?,karizzzz,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkzqlk,artistic_critique,human1,
+71,The album is officially OUT ON ITUNES. 8:05pm PST,Brookefemale,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplumq0,external_narrative,human1,
+72,I really like End Game! Shame I couldn't just stream it via Apple Music though.,SturlingArchur,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplxb79,external_narrative,human1,
+73,"I am loving this album! Anyone else hear a Grouplove influence in ""This Is Why We Can't Have Nice Things""?",msminty,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm1jdq,artistic_critique,human1,
+74,Dancing With Our Hands Tied is my favorite song but I still hate Look What You Made Me Do with all my heart. The album without LWYMMD is great though.,Eshidor,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm8zrg,artistic_critique,human1,
+75,I don't have iTunes so I can't get the album yet :(,lw9908,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm248v,external_narrative,human1,
+76,Do I get a digital album if I purchase the physical one?? The only cd player I have is in my car...,monsquesce,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmhg0g,external_narrative,human1,
+77,I like Getaway Car a lot...I'm going to save half for tonight I think!,wonderaboutme,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkvogs,artistic_critique,human1,
+78,AHHH I CAN'T WAIT TO LISTEN TO IT,angelduuh,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkpd4t,fandom_expression,human1,
+79,Explicit lyrics!!,Bieb,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl0jcq,fandom_expression,human1,hard; in planning.md
+80,"(first listen btw lol )
+
+Faves: I Did Something Bad, Don't Blame Me, Delicate, Dancing With Our Hands Tied (not a huge fan of the drop tho),
+
+Bad: Getaway Car, LWYMMD, Gorgeous, Dress",CarlySlae,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpliil6,artistic_critique,human1,
+81,so from what I've read it's an average album with a few stand out songs. what's odd is the fact that I've seen so much variety between people's favourites.,DarkVoyager89,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpljmxq,external_narrative,human1,
+82,"《Reputation》is not only Taylor Swift's original effort, it also means her gorgeous turn around and her domineering return. The album is like an oath to the world.",MestryCherry,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dwpcxl5,external_narrative,human1,
+83,Worst album of 2017 for me sadly,MihaMijat,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplb0te,artistic_critique,human1,
+84,Can you update the Spotify Link? Thank you,Sisiwakanamaru,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dqlbukf,external_narrative,human1,
+85,so it goes reminds me a lot of digital daggers,ieatstickers,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmhiuf,artistic_critique,human1,
+86,"I like #'s 1-6, 8, 9, 14, 15. I didn't really like the other five at all, but I did get a laugh out of #13. I guess 10/15 isn't bad for an album altogether.
+
+I like the satirical themes and it's fun to listen to.... but I don't know if it's going to hook me emotionally like her other albums did. I can't really relate to the lyrics. I think Getaway Car is hands down the best song on the album.",West_Covina,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplukij,artistic_critique,human1,
+87,Apparently there is a prologue?,Lichix,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl50np,external_narrative,human1,
+88,"Do we know if it will be on streaming tomorrow yet or no?
+
+Any bonus tracks that we need to look out for?",OriginalBad,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl06m2,external_narrative,human1,
+89,Does anyone know if the magazines are different or are they all the same inside material,daxovan,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkm7pz,external_narrative,human1,
+90,"did anyone else think that:
+
+Before reputation came out, she had no reputation.
+
+Now, reputation is hers – again.
+
+from here: https://gogo.promogogo.com/announcement/The-Most-Interesting-Things-About/6158bf8dba9b420c",cosimhabbi,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpreo6n,external_narrative,human1,
+91,"https://twitter.com/archivetay/status/928625047799042048
+
+“Why She Disappeared” A poem by Taylor Swift",_sparklingsilver,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpklknd,external_narrative,human1,
+92,"What is I Did Something Bad about?
+
+Her breaking up with someone and liking it?",MIddleschoolerconnor,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplhxnt,artistic_critique,human1,
+93,delicate is just so nice to listen to,eglaf19,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl1tkm,artistic_critique,human1,
+94,Getaway Car has left me crying cuz I can relate so mutch!,Bastsrpdr,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl0eia,artistic_critique,human1,
+95,dancing with our hands tied is a bop i hate the autotune on delicate i did something bad is...bad,endorphins_,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpktzc7,artistic_critique,human1,
+96,"This Is Not A Drill
+
+(I just wanted to share this bop, i dont have the leak, nor do i want it.) no, actually, dont give me it",Joebiekong,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkto8i,external_narrative,human1,
+97,"Does anybody else get Lorde, ""Melodrama"" vibes from a few of these songs?",SavageToasters,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dqmadul,artistic_critique,human1,
+98,I would buy the cd but i currently dont have a way to sync that music to my phone >:S,VeganSquash,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkmk9l,external_narrative,human1,
+99,“So it goes...” is my favorite song.,Snickdave41,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmhgp8,artistic_critique,human1,
+100,Was there a line in New Years Day that referenced Enchanted?,Lorday,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm1u16,artistic_critique,human1,
+101,"Finally finished classes for the day, listening to it now
+
+edit: the last ""so good"" in the I Did Something Bad chorus reminds me of Misery Business
+
+edit2: so i've listened to the whole thing now (New Year's Day just finished). Overall I liked it! A pretty good album with some great stuff (esp. Don't Blame Me) and some meh stuff (King of my Heart, the singles). This Is Why We Can't Have Nice Things is wild lol",daedaleo,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplgx89,artistic_critique,human1,
+102,I like the verses of Dancing With Our Hands Tied more than the choruses. The combination of them reminds me a lot of Strong Hand by CHVRCHES.,vagenda,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkxl5p,artistic_critique,human1,
+103,"Delicate, Getaway Car, King of My Heart, DWOHT are the best songs in this album. These are the poppiest, most melodic songs on the album and drag the other songs on this album through the mud. We love perfect pop moments!",jmedina16,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm0ufd,artistic_critique,human1,
+104,"And I Bury hatchets but I keep maps of where I
+
+PUT ‘EM
+💀",Mausbarchen,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dqcww3j,fandom_expression,human1,
+105,WHY END GAME REMINDS ME SO MUCH TO WITNESS????,rafahead,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplrit5,fandom_expression,human1,
+106,Don't Blame Me could easily be a country song. Closest thing to country she's been since Red.,hatramroany,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplk01g,artistic_critique,human1,
+107,"The opening to End Game is physically repulsive, rest of the song is okay though",gregandsteve,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl0k2z,artistic_critique,human1,
+108,"So many FRAUDULENT CRIMINALS on this thread. Interesting! Taylor's FBI army is COMING for us laydeez 👏😳.
+
+Also, only listened to End Game so far and it was okay I guess, will probably be a number 1 for 24 weeks smash so I already hate it tho",zrgame321,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkyjmi,external_narrative,human1,
+109,But I work tomorrow. And I can't stream it?! How am I going to listen to this together with you guys. :(,Jelboo,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkkj76,external_narrative,human1,
+110,"Looks like she's really holding it off streaming services, for the time being at least, (has there been any info at all on that point?) disappointing although not really surprising. Guess I'll have to consider buying it on Itunes.",skargardin,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm123l,external_narrative,human1,
+111,"Favorite tracks: End Game, Delicate and Getaway Car
+
+I have only heard it once (will listen to it again later). So far I’m not a fan of the production and the laugh in one of her songs is really distracting lol.",shatteredcrystals,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplrjal,artistic_critique,human1,
+112,"Is she afraid to use her voice? on some of the songs, the loud beats take everything away from her vocals. It's not bad as a whole, I like a lot of parts of it but it just doesn't feel right. Look what you made me do is actually good because it gives her vocals a chance to take the center stage. The sound is a bit outdated but some are melodies are catchy. My favorites are TIWWCHNT, I did something bad, LWYMD, maybe Delicate too (I can't decide). Also, End game should not exist, I like all three artists but it just doesn't work.",halalcornflakes,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplhnlg,artistic_critique,human1,
+113,Here's an unboxing of the target magazine vol2.,KLJohnnes,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplbqdt,external_narrative,human1,
+114,"Dress is giving me FKA twigs Pendulum vibes
+
+The shotgun line in Getaway Car is extremely similar to the shotgun line in the prechorus in Roller Coaster by Bleachers",tip-of-the-yikesberg,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl47m8,artistic_critique,human1,
+115,Was listening to a radio show this morning and they were talking about how this leaked early and all the fans/stans were so upset about the leak. They read some comments and they were pretty funny.,ps2sanandreas,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmfjrv,external_narrative,human1,
+116,She serves VOCALS in Don't Blame Me,Jennica,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkoh25,fandom_expression,human1,
+117,"I'm pretty ambivalent about much of this upon first listen but ""End Game"" is awesome and for that I am very happy.",wellgroomedmcpoyle,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm1kri,artistic_critique,human1,
+118,[thinkpiece mode activated] Ok can we talk about the fact that Katy Perry was attacked for months for featuring Migos but there hasn't been any backlash to Taylor Swift magically becoming appropriating Caribbean? 🤔,totallynot14_,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplvp4j,external_narrative,human1,
+119,"Honestly, I am a Taylor fan but it's really not THAT bad. There are a lot of catchy songs on this.
+
+edit: the only song that really annoys me is Dancing With Our Hands tied it just sounds so dated. It's still catchy but that's not enough to save it for me. I kinda hate it but I bet I'll still listen to it a lot lmao.",qtsarahj,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplrkg9,artistic_critique,human1,
+120,"wow this really exceeded my expectations!! i def liked the singles but im glad its not all so dark sounding.
+
+my favorite tracks are getaway car and delicate. but honestly theyre all good!",petsounds94,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplp0od,artistic_critique,human1,
+121,"Halfway through and So It Goes is a standout for me - some of these songs are so messy, but So It Goes is excellent and consistent, both musically and lyrically.
+
+I Did Something Bad and Don’t Blame Me have their moments, but the production is underwhelming.
+
+The big disappointment for me is Getaway Car, which just feels so basic, yes even with the key change.
+
+Dress is basically a CRJ song.
+
+This Is Why... works for me, inexplicably.
+
+New Year’s Day reminds me a lot of the National’s Gospel, and that’s a good thing!
+
+I️ was disappointed overall, though.",Dammit-Hannah,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl39ig,artistic_critique,human1,
+122,"Remember when she announced that the album will come out in 2 months and how we thought we all cannot wait?
+
+well the day's here (or soon, depends where you are)",neillyy,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpke7l8,external_narrative,human1,
+123,Tbh I’m pumped to see what secret messages she hides in the booklet this time around.,BuceTheCaboose,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkjvnw,external_narrative,human1,
+124,"I like the verses all a lot more than the choruses, idk why that is.",katekate1507,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpnem32,artistic_critique,human1,
+125,"I'm loving the album so far. ""King of my heart"", ""CIWYW"" and ""Getaway Car"" are the standouts for me.",Unkill_is_dill,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmmvc5,artistic_critique,human1,
+126,"Alright, I've got two listens under my belt now, so I'm an expert.
+
+In all seriousness, this album isn't bad, but it's a bit harder to get into than her previous work. However, I Did Something Bad is an awesome, awesome song. I do still think Look What You Made Me Do is the best track on the album.
+
+Does Don't Blame Me give anyone else some Crazy in Love vibes? I think I'm thinking the Fifty Shades of Grey version. Or I could be nuts, but my fiancé agrees with me.",jhxcb,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmdyyc,artistic_critique,human1,
+127,"My initial take after first listen...
+
+It's good, although easily the least good album she has made to date. Still better than the average album I hear obviously.
+
+About half the tracks are complete turkeys IMO, the other half are good to great.",Svviftie,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm06q8,artistic_critique,human1,
+128,"Honestly after the first listen I was SO disappointed, but now that I've listened to it again I am starting to really like it. Not what I expected from Taylor but a good pop album nonetheless.",halcyonictonic,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplp2wk,artistic_critique,human1,
+129,I Did Something Bad's bridge confirms that she plays Town of Salem,imasalesman,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl5jp7,fandom_expression,human1,
+130,Hey Mama Day,darkfire565,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkjn29,fandom_expression,human1,
+131,"The trap beats, and the drops are so jarring, doesn't fit at all.",DJ_B0B,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplju3q,artistic_critique,human1,
+132,"far from what you would call a taylor fan and mostly checked this one out because of morbid curiosity but aside from how goofy as hell ""end game"", ""i did something bad"", ""look what you made me do"" and ""this is why we can't have nice things"" were the rest of this album is pretty...okay? not offensively bad, just seems like standard fare for taylor for the most part.
+
+""don't blame me"", ""delicate"", ""dancing with our hands tied"" and ""new year's day"" are probably the closest thing to a favorite track i have on this album aside from a few other standout moments i can't recall. i can at least say a lot of the synths are well done. also i feel like this thing couldve lost a few tracks and maybe cut down to 10 or 11. overall it's decent.",VietRooster,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl4r1j,artistic_critique,human1,
+133,those who say they miss the 'old taylor' will love new year's day,eglaf19,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl1dnj,external_narrative,human1,
+134,"ready for it: garbage: 2/10
+
+end game: meh: 4/10
+
+i did something bad: great beat, 🤔 lyrics: 8/10
+
+don't blame me: lyrics are okay, repetitive: 7/10
+
+delicate: boring: 5/10
+
+lwymmd: lwymmd: 4/10
+
+so it goes: nothing special: 5/10
+
+gorgeous: has grown on me: 6/10
+
+Getaway car: really cute!: 7/10
+
+king of my heart: :grimacing: that voice filter: 5/10
+
+dancing with our hands tied: a BOP: 7/10
+
+Dress: ANOTHER BOP: 8/10
+
+tiwwchnt: good beat, exemplifies everything BAD about taylor swift imo: 3/10
+
+call it what you want: boring but inoffensive and cute: 6/10
+
+new year's day: nice ballad: 6/10
+
+Overall... 6/10 Not the best album but a few great songs save it from being a complete failure. Even though I wasn't pleased with the lyrics I Did Something Bad is my early favorite. Ready For It is the worst song on the album in my opinion.",9874102365,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkzzch,artistic_critique,human1,
+135,Delicate wig flew... Trop pop is never getting old for me.,7mad,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkyflq,fandom_expression,human1,
+136,Am I crazy or is it a TAD Witness-esque?,Jennica,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpktufh,artistic_critique,human1,
+137,"""He Said She Said"" ~ Taylor on TIWWCHNT
+
+Me: https://youtu.be/4sTHw7HEfHo",Joebiekong,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpnqkdm,artistic_critique,human1,
+138,"I listened to reputation a few times today and really enjoyed about a third of it. My favorite was the last song, “New Year’s Eve,” but it’s so different, it almost feels wrong ranking it against the others. I’d love to see an entire EP just like this in the future. “Delicate” was my favorite Martin/Shellback addition. Great song, but I was a little disappointed in their half of the album overall. Antinoff’s contributions, imo, contained both the best and worst songs. “Dress” was an instant stand out for me, with the ethereal synth and confident, rhythmic vocals of the verses. However, despite the catchy, storytelling lyrics, the chorus felt too derivative of FKA Twigs’ “Two Weeks,” who can pull off the needed sexiness much more naturally than Swift. Other standouts for me were “Getaway Car,” and “Gorgeous.” I’d agree with the 6/10 I’ve seen from other posters.",brycex,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpnhhge,artistic_critique,human1,
+139,"""There's no way she's getting to 1 million first week""
+
+Pre-orders reach double that of 1989's
+
+""Oh well that's just her fans buying multiple physical copies so that they can get good tickets to her tour""
+
+Sells 800,000 on iTunes in 1 hour, just in the US
+
+""...""",animefangrant62,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm8uzu,external_narrative,human1,
+140,"So, some projections suggest a possible 2 million first week sales.",Peachy_Pineapple,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm2niw,external_narrative,human1,
+141,"Did it really sell 800k in one hour? Literally wtf, I don't believe it. It's a decent album I guess but it's hard not to think that other artists deserve this success instead. Especially those that aren't as desperate for record breaking sales.
+
+This is Why We Can't Have Nice Things, I Did Something Bad and Dont Blame Me are bops tho 😍",zrgame321,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm54ob,external_narrative,human1,
+142,"King of My heart is the best song on the album, by far.
+
+That being said, it doesn't really feel like a Taylor swift song. The whole album feels like its taken a few too many steps towards the mainstream procucer-pop that is dominating the radio these days.
+
+I can appreciate artists wanting to play around with different sounds, but where i think 1989 struck a great balance between incorporating more complex, modern productions while still maintaining Taylor's identity, most of the songs on reputation have lost her sound entirely. Several tracks on here could very easily be mistaken for Halsey, Daya, Starley or any of the others.
+
+I was hoping for more Style, but it i got Zed instead.",wildwalrusaur,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmqipw,artistic_critique,human1,
+143,Just a few hours before the release in here but I will be patient... If it is not on Spotify expect me to be a real pirate though. Look what you may make me do Taylor.,Leixander,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkzcdq,external_narrative,human1,
+144,Im ready to get slayed by Dress,Assassinationday,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkzdl4,fandom_expression,human1,
+145,"OMG OMG AHHHHH YASSSSSSSS!!!!! ITS HEERE!!!!! 🙌
+
+new Ed video",sapphire1921,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkfoed,fandom_expression,human1,
+146,"This was so much better than I expected omgggg. I was scared 15 songs would have a bunch of filler, but I still love 12 out of the 15 tracks. (Delicate, Call It What You Want, Dancing With Our Hands Tied, and I Did Something Bad are clear stand outs for me, as well as the stunning twigs-esque Dress)",ncd46,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpnckfv,artistic_critique,human1,
+147,GUYS. I'm calling it now: This is her best album yet!!!,Santanyi,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpndphx,artistic_critique,human1,
+148,MFW it's not even been a minute and yet this has 4 upvotes and 2 comments :deadbanana:,ImADudeDuh,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkb3jw,external_narrative,human1,
+149,Omg i dont know if i envy or dislike you guys spoiling / teasing us with the listens through discord!,Joebiekong,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpko4wi,external_narrative,human1,
+150,"I’m in class, BORED outta my mind. I NEED the leak lmao but I can wait.",TheSubparWriter,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkrzq7,external_narrative,human1,
+151,"WAIT IT LEAKED?!
+
+wait I suck at the internet oop",InfernalSolstice,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkslph,fandom_expression,human1,
+152,IT'S LEAKED NOT A DRILLLL,ojjmyfriend,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpksqzu,fandom_expression,human1,
+153,"Getaway Car is so Bleachers!!! 😍
+
+Her delivery of ""It was a shotgun shot to the heart"" is sooo Antonoff ahaha",refrayn,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm51uo,artistic_critique,human1,
+154,Why oh why did she have to let her bitterness about the whole Kanye/Kim situation infest this album? Makes the sound and tone so inconsistent when mashed with these love songs.,NutellaMonger,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmtt89,external_narrative,human1,
+155,"Just realize that she says ""reputation"" 13th times on End Game, queen of weird stuff.",KLJohnnes,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplotar,artistic_critique,human1,
+156,Don't Blame Me is electrogospel. Agree?,what_I_meme,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkyeof,artistic_critique,human1,
+157,BIG REPUTATION BIG REPUTATION,axestogrind,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkws8p,fandom_expression,human1,
+158,"Rumor has it Taylor Swift is currently writing the deluxe edition tracks about an issue seriously damaging to her reputation:
+
+the unkempt screaming in unison from tens of thousands of popheads users breaking the F5 keys on their laptops",ThatParanoidPenguin,https://www.reddit.com/user/ThatParanoidPenguin,external_narrative,human1,
+159,Apparently it sold 1.5 MILLION copies in eight hours. This week is going to be crazy.,mynameistoo_common,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmg8vy,external_narrative,human1,
+160,Just want to post some love for DRESS!!!! I see everyone loving on all the other tracks but not too much love for this one. Definitely my favorite and catchiest IMO of the album.,redditryan2011,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmj8vv,artistic_critique,human1,
+161,"Delicate is the best new song I've heard this year, period.",didntlogin,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpn3pex,artistic_critique,human1,
+162,"New Taylor, Eminem, and possibly Gaga this month? Popheads will be over the moon and back. 🙌",sapphire1921,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkew83/,external_narrative,human1,
+163,"This doesn't warrant its own post so I'll have to post it here. Anyways, here's compliation of reviews with links. I'll update the thread as more reviews come and as they are accepted to Metacritic.
+
+The Telegraph - 4/5 stars
+
+brash, weaponised pop - Swift deserves a reputation as a genuine musical talent
+
+Los Angeles Times - highly positive
+
+Taylor Swift's talent remains intact on 'Reputation,' her most focused, most cohesive album yet
+
+The Washington Post - highly positive
+
+Taylor Swift’s ‘reputation’ is pure pop magic
+
+Rolling Stone - 4/5 stars
+
+Taylor Swift Ditches Tabloid Drama on Most Intimate LP Yet
+
+The Guardian - 4/5 stars
+
+Superb songcraft meets extreme drama
+
+The New York Times - 7/10
+
+Swift Is a 2017 Pop Machine on ‘Reputation,’ but at What Cost?
+
+Entertainment Weekly - B
+
+Taylor Swift is no longer America’s sweetheart on reputation
+
+The Independent 8/10
+
+Each of the 15 songs on 'reputation' tackles how Swift is perceived by the people who know her - and the people who don’t
+
+Slant Magazine - 8/10
+
+Reputation marks a shift from the retro-minded pop-rock of 2014's 1989 toward a harder, more urban aesthetic, and Swift wears the stiff, clattering beats of songs like “...Ready for It?” like body armor.
+
+Verdict from Metacritic: 81/100 based on 6 reviews, indicating universal acclaim
+
+Note: for LA times and Washington Post, I've had to just sum up their score to being ""highly positive"". The publications will give a number to metacritic eventually, but we are still waiting for that.",angusaditus,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm96p5,external_narrative,human1,
+164,"I never trust a narcissist
+
+But they love me
+
+So I play 'em like a violin
+
+And I make it look oh so easy
+
+'Cause for every lie I tell them
+
+They tell me three
+
+This is how the world works
+
+Now all he thinks about is me
+
+Kanye Kardashian ended just like that. https://i.imgur.com/ivcf4yZ.gif",KometBlu,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl03k4,fandom_expression,human1,
+165,Just got my Target magazine exclusive version in the mail! Can't wait to hear Reputation. Interested in hearing where Taylor is after 1989 and the whole Kanye debacle.,OceanSage,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmyj03,external_narrative,human1,
+166,"My first thought after listening to the album and seeing people's comments that it's not what they were expecting, I thought:
+
+This is Taylor's ""808s and Heatbreak.""
+
+I've had long-standing theories on 808s, namely that it was the album that Kanye had to put out so that he could make My Beautiful Dark Twisted Fantasy. 808s is SUCH A GOOD ALBUM that is NOTHING like the trilogy before it, and it set the stage for everything that came after--MBDTF, etc. I don't anticipate Taylor going to way of Yeezus, but I do think it's a good bridge album to the next phase of TSwift.
+
+EDIT: Found this interview with Ringer staff where someone says the same thing and now I don't feel crazy or alone. https://www.theringer.com/music/2017/11/10/16633908/taylor-swift-reputation-exit-survey",hi_pathetic,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmvcz0,external_narrative,human1,
+167,"Friendly reminder that people spent years on this album and we are so close to the official release date that we can make it guys. We're not entitled to get it early. Here's to hoping it doesn't leak and the artist gets to do this release on their terms, even if it is just a matter of hours.",camirose,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpksxde,external_narrative,human1,
+168,"""Hey Mama"" is queued up to be played nonstop all day tomorrow, I'm ready for the big day 🌊🌊",BASEDPARTITION,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkozri,external_narrative,human1,
+169,"“please don’t ever become a stranger whose laugh I️ could recognize anywhere”
+
+Taylor hitting me in the FEELS welcome back queen",ktdools,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmeve3,fandom_expression,human1,hard
+170,My wig firmly in place,KyloRenJepsen,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplfkva,fandom_expression,human1,hard
+171,"MY QUEEN CAME THROUGH!!! This album is all kinds of amazing. My favorite track HAS to be delicate, I don't know why y'all aren't bopping to it. The build up is perfect, the echo thing they do in the final chorus is frankly amazing.
+
+Can I also say that the bridge in Getaway Car is gorgeous with the key change and all?",didntlogin,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpllnhn,artistic_critique,human1,
+172,I LIVED AND DIED WAITING FOR THIS ALBUM UP UNTIL NOW BUT MY SNAKE QUEEN HAS RESURRECTED ME AND I AM HERE TO PRAY,camirose,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplxeth,fandom_expression,human1,
+173,not huge on it. everything feels... if were being honest... like lorde b-sides,breadburger,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplyjxw/,artistic_critique,human1,
+174,This is Taylor's Artpop and I'm not mad about it,grindcorecore,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm5mfz,artistic_critique,human1,
+175,"damn I️ slept through the whole roll out of this lmao 1.9k comments? jfc
+
+it’s not on Spotify and I️’m too lazy to even look for a download of this but I️m glad it’s getting a good response I’ll give my hot take in a week",calltehshots,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm8x7r,external_narrative,human1,
+176,"Can y’all please stop down voting anyone who has a negative opinion of this album? Like, I get that everyone is hyped about new music from a major pop girl but it’s so disheartening to sort by controversial and see perfectly valid opinions that aren’t rude at all but are still being buried just because they don’t praise the album. If you don’t like a comment just ignore it and move on.",Daydream_machine,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmyoz6,external_narrative,human1,
+177,"I can't wait to find out if ""I Did Something Bad"" is about Tom Hiddleston
+
+/s
+
+jk but i'm hyped. i've made 11 reputation covers out of pure boredom. i'm RFI",Jennica,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkbm5x,external_narrative,human1,
+178,"[SPOILER]
+
+""This Is Why We Can't Have Nice Things"" is 100% about Kimye.
+
+""Stabbed me in the back while shaking my hand""
+
+EDIT: It reminds me of AYHTDWS in terms of sound, although with the harsher production she's going for.",animefangrant62,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpknmzc,artistic_critique,human1,
+179,I'm already quaking,acedino,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkbt3u,fandom_expression,human1,
+180,OOPS THEY DID IT AGAIN. THE WHOLE ALBUM LEAKED ON TWITTER. BRB GONNA PREPARE FOR A GREAT BRUNCH.🔥💃🔥,impeccabletim,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkq1wh,fandom_expression,human1,
+181,"Some of this really sounds dated :-/
+
+hoping the HQ wins me over",Jennica,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpknlr0,artistic_critique,human1,
+182,"My take on the album is that oftentimes the production is really good, but the lyrics are extremely forgettable. You could literally change the lyrics to anything else and I wouldn't notice.",FinnscandianDerp,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpml9iw,artistic_critique,human1,
+183,Can’t wait til TS7 when reputation is great and she won’t be able to match its songs. Reading these reactions are exactly what people said about 1989 when it dropped.,,,,human1,
+184,LORD SAVE ME MY DRUG IS MY BABY,weareallmoist,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkyr4l,fandom_expression,human1,
+185,I'm feel like I'm at the end of a marathon,angusaditus,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkbmx8,fandom_expression,human1,
+186,I'm seeing a lot of hate towards Delicate!! What???!! The beat is BOMB.,seeyanever,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpljcx5,fandom_expression,human1,
+187,"Totally going to listen to 1989 and this as if it were a double album.
+
+They’re similar but so different.",bakerbrokebro,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmtl0o,external_narrative,human1,
+188,random comment: the chorus of “this is why we cant have nice things” reminds me a lot of the chorus from avril lavigne's “complicated”,doublepoly123,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm1zep,artistic_critique,human1,
+189,"In Call It What you Want does anyone else hear that one line as ""Making farts under covers""? Sorry :(",ChestnutGrove,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm6eon,artistic_critique,human1,
+190,My local KFC did this,ojjmyfriend,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkjd0i,external_narrative,human1,
+191,"Whether you love Taylor or hate Taylor, this is a big day in pop music and will show us when what we'll hear on the radio for the next year and a half until her album cycle dies down.
+
+Personally, I'm hype but also wary for the first listen. Literally every song so far she's released has gotten better with time, and I was hesitant on a first listen. I hope people give this album a chance and a few listens before calling it trash and a flop. Knowing how divisive Taylor is, that won't happen, but a lot of us have been looking forward to this day for three years so I hope it lives up to some of the expectations after multiple listens.
+
+Edit: also I can't believe the mods took this prime opportunity to promo Rascal Flatts",NapsAndNetflix,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkb7g9,external_narrative,human1,
+192,"a shop in Tokyo, going all the way and being extra, i love it
+
+https://pp.userapi.com/c834102/v834102347/1b23e/5X73WL3CvCA.jpg
+
+https://pp.userapi.com/c840129/v840129347/537a6/rhtCyiL3ig8.jpg",angusaditus,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpke2bu,external_narrative,human1,
+193,"Current Metacritic Score: 81
+
+It's been opening up with pretty nice reviews:
+
+Rolling Stone - 4/5
+
+New York Times - ""bombastic, unexpected, sneakily potent""
+
+The Guardian - 4/5
+
+Telegraph - 4/5
+
+The Independent - 4/5
+
+LA Times - ""her most focused, most cohesive album yet""
+
+Slant Magazine - ""Swift is capable of making pop perfection seem effortless"" (talking about Dress)
+
+USA Today - ""a fully-formed snapshot of a singer in love, and in control""
+
+Metro UK - 4/5
+
+EW - Grade B
+
+Variety - ""if you imagine that bold-faced names have feelings, too, this text and all the songs that surround it make for a fascinating combination of audacity and vulnerability""
+
+UsWeekly - ""it’s one of her most solid and cohesive efforts thus far""
+
+ET - ""she’s undeniably at her best when she sheds the sheep’s clothing""
+
+Cleveland - Grade B+
+
+The Daily Caller - ""simply put, it’s one of the best albums Swift has ever made.""
+
+*Will update as more reviews are in.",TheLastAxolotl,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplxani,external_narrative,human1,
+194,I haven't felt this amount of both hyped and concerned since election night exactly one year ago. Let's hope tonight doesn't end with the same feeling of utter disappointment.,thegeecyproject,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkc7hb,external_narrative,human1,
+195,"https://twitter.com/drew_macbeth/status/928610235555737600
+
+The first page of the magazine",_sparklingsilver,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkjp09,external_narrative,human1,
+196,"Target magazines and iTunes preorders: $75
+
+VIP tickets to reputation world tour: $666
+
+The unholy scalping I will receive on November 10th, 2017: Priceless",Piccprincess,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkb2dh,external_narrative,human1,
+197,"Somewhere Jake Gyllenhaal is laughing hysterically at his reflection in a bathroom mirror, knowing he still inspired the best Taylor Swift song",theTKOS,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpllhb4,external_narrative,human1,
+198,"""my mistakes have been used against me"" girl what? oh ffs",eglaf19,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl18n2,external_narrative,human1,
+199,Taylor flair in honor of the Lord's day,angusaditus,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkdmhp,fandom_expression,human1,
+200,1 question - how do i cancel a preorder,harlequinx9,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpl2hr7,external_narrative,human1,
+201,#WaitingForItToBeOnSpotifyParty,ub3rscoober,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmh9z3,fandom_expression,human1,
+202,"""Please don't become a stranger whose laugh I could recognize anywhere"" is literally my worst fear when it comes to me and my best friend who moved away recently. We both texted each other that same line while crying and it finally put into words how we've both been feeling about the big move.",enyasurvivor,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplzswp,external_narrative,human1,
+203,laughs in pirate,zrgame321,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkgyur,fandom_expression,human1,
+204,Is there gonna be another discussion thread for us poor Spotify plebs in a weeks' time?,thegeecyproject,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplxth6,external_narrative,human1,
+205,I'm actually surprised it's getting mixed to almost positive reactions on here. I thought everyone would preemptively hate it.,macho760,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplblmc,external_narrative,human1,
+206,"Updates on reviews
+New reviews
+Chicago Tribune - 2.5/4 stars
+
+Taylor Swift puts 'Reputation' on cruise control
+
+NME - 4/5 stars
+
+Tay ploughs over the media and former friends with her exhilarating, tank-like sixth album
+
+Boston Globe - mixed
+
+Taylor Swift reckons with her ‘Reputation’
+
+Note: I'm only adding reviews which count towards her MetaCritic score. You can find the list of accepted publications here. Also not that MetaCritic has not been updated, so the score is still 81/100 based on 6 reviews but obviously that will change soon. Still waiting for Pitchfork and a few other big publications, but it seems the album will at least het a score of 70+
+
+From last update
+The Telegraph - 4/5 stars
+
+brash, weaponised pop - Swift deserves a reputation as a genuine musical talent
+
+Los Angeles Times - highly positive
+
+Taylor Swift's talent remains intact on 'Reputation,' her most focused, most cohesive album yet
+
+The Washington Post - highly positive
+
+Taylor Swift’s ‘reputation’ is pure pop magic
+
+Rolling Stone - 4/5 stars
+
+Taylor Swift Ditches Tabloid Drama on Most Intimate LP Yet
+
+The Guardian - 4/5 stars
+
+Superb songcraft meets extreme drama
+
+The New York Times - 7/10
+
+Swift Is a 2017 Pop Machine on ‘Reputation,’ but at What Cost?
+
+Entertainment Weekly - B
+
+Taylor Swift is no longer America’s sweetheart on reputation
+
+The Independent 8/10
+
+Each of the 15 songs on 'reputation' tackles how Swift is perceived by the people who know her - and the people who don’t
+
+Slant Magazine - 8/10
+
+Reputation marks a shift from the retro-minded pop-rock of 2014's 1989 toward a harder, more urban aesthetic, and Swift wears the stiff, clattering beats of songs like “...Ready for It?” like body armor.
+
+Verdict from Metacritic: 81/100 based on 6 reviews, indicating universal acclaim
+
+Note: for LA times and Washington Post, I've had to just sum up their score to being ""highly positive"". The publications will give a number to metacritic eventually, but we are still waiting for that.",angusaditus,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmdwz8,external_narrative,human1,
+207,Pitchfork is going to drag the hell out of this,MoonB26,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpktouo,external_narrative,human1,
+208,"I think it's a good and/or bad sign that everyone's ""stand out"" tracks are different.
+
+Either there's lots of good stuff here, or nothing stands out enough to be exceptional.",pastaandpizza,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmxiny,external_narrative,human1,
+209,"Idolator Reviewed Reputation “Not a total disaster, but not great either. 'Reputation' is Taylor Swift's worst album”
+
+http://idola.to/2zLpHil",JunkyGS,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpmqakf,external_narrative,human1,
+210,"So from reading these comments every song someone LOVES while someone else HATES but the lover hates other songs an the hater loves other songs.
+
+So that makes it a masterpiece?",hatramroany,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dplk9bm,external_narrative,human1,
+211,This one by one leaking is a JOKE,Jennica,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkswz3,external_narrative,human1,
+212,"Taylor already breaking records and selling around 800,000 the first hour",RandomDKguy,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpm0vkx,external_narrative,human1,
+213,The song titles are all displayed now along with the song duration. (iTunes),sapphire1921,https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkfj11,external_narrative,human1,

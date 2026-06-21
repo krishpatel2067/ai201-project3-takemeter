@@ -25,3 +25,30 @@ For the CodePath course AI201: Applications of AI Engineering
   - Got close with the data (started recognizing the usernames and posts)
   - Links couldn't be copied in plaintext, collapsing a part chunk of context behind some posts
   - Lesson learned - data is _highly_ unclean - even in a thread of 2.4 comments, it was difficult to find 200 good ones
+
+- Zero-shot baseline:
+
+Label distribution:
+
+```
+artistic_critique     89
+external_narrative    84
+fandom_expression     40
+```
+
+Classification report:
+
+```
+🎯 Baseline accuracy: 1.000  (evaluated on 32/32 parseable responses)
+
+Per-class metrics (baseline):
+                    precision    recall  f1-score   support
+
+ artistic_critique       1.00      1.00      1.00        14
+external_narrative       1.00      1.00      1.00        12
+ fandom_expression       1.00      1.00      1.00         6
+
+          accuracy                           1.00        32
+         macro avg       1.00      1.00      1.00        32
+      weighted avg       1.00      1.00      1.00        32
+```

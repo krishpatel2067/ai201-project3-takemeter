@@ -42,7 +42,7 @@ by Number3rdInTheVoting.
 
 by GuitarzanWSC.
 
-- `external_narrative` - Primarily contains stories or discussion about the broader context (e.g. current events, gossip, celebrity feuds/drama, Billboard charts, sales, reviews, etc.). Includes personal context too, such as discussion about people and situations around the post publisher (e.g. mentions of family, friends, roommates; decisions to buy the album; etc.). Tone must be mostly matter-of-fact with minimal to no joking, slang, caps, etc
+- `external_narrative` - Primarily contains stories or discussion about the broader context (e.g. current events, gossip, celebrity feuds/drama, Billboard charts, sales, reviews, etc.). Includes personal context too, such as discussion about people and situations around the post publisher (e.g. mentions of family, friends, roommates; decisions to buy the album; etc.). Tone must be mostly matter-of-fact with minimal to no joking, slang, caps, etc.
 
 [**Clear Example 1**](https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkxpas):
 
@@ -64,7 +64,7 @@ by glasscageheart.
 
 by animefangrant62.
 
-- `fandom_expression` - Primary contains standalone emotional assertions, visceral reactions, or pure exclamations without much logic or elaboration (e.g., hype, witty remark, meta-joke, exaggeration, etc.). Sometimes can mix in artwork opinions and current event mentions, but is often distinguishable by a strong use of slang, all caps, emojis, etc.
+- `fandom_expression` - Primarily contains standalone emotional assertions, visceral reactions, or pure exclamations without much logic or elaboration (e.g., hype, witty remark, meta-joke, exaggeration, etc.). Sometimes can mix in artwork opinions and current event mentions, but is often distinguishable by a strong use of slang, all caps, emojis, etc.
 
 [**Clear Example 1**](https://www.reddit.com/r/popheads/comments/7brx3o/comment/dpkcocf):
 

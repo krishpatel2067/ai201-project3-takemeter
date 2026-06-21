@@ -137,9 +137,8 @@ I will manually copy-paste suitable posts from the Reddit megathread in a CSV fi
 Not all posts from the megathread will be chosen. Specifically, posts:
 
 - Must be direct replies to the original post (no replies to replies)
-- Must be unique by poster's username
 - Must be loosely related to the main topic
-- Must be family-friendly
+- Must not contain full curse words
 - Must _not_ be by deleted users
 
 I will collect around 200 samples, aiming to distribute the 3 labels evenly - thus, around 60-70 samples per label. Some labels may be harder to find samples for than others, leading to them being underrepresented. In such a case, I will broaden my search (e.g., scrolling much farther down) in an attempt to find a more even distribution of posts. If that doesn't work, I will consider modifying the label definitions and/or boundaries, re-labeling the samples as needed afterward.

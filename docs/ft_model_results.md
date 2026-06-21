@@ -36,7 +36,11 @@ external_narrative       0.00      0.00      0.00        12
 
 ### Confusion Matrix
 
-[TODO]
+| True v Predicted >   | `artistic_critique` | `external_narrative` | `fandom_expression` |
+| -------------------- | ------------------- | -------------------- | ------------------- |
+| `artistic_critique`  | 14                  | 0                    | 0                   |
+| `external_narrative` | 12                  | 0                    | 0                   |
+| `fandom_expression`  | 6                   | 0                    | 0                   |
 
 ## 2
 
@@ -72,7 +76,11 @@ external_narrative       0.86      0.50      0.63        12
 
 ### Confusion Matrix
 
-[TODO]
+| True v Predicted >   | `artistic_critique` | `external_narrative` | `fandom_expression` |
+| -------------------- | ------------------- | -------------------- | ------------------- |
+| `artistic_critique`  | 13                  | 1                    | 0                   |
+| `external_narrative` | 6                   | 6                    | 0                   |
+| `fandom_expression`  | 6                   | 0                    | 0                   |
 
 ## 3
 
@@ -127,7 +135,11 @@ external_narrative       0.83      0.83      0.83        12
 
 ### Confusion Matrix
 
-[TODO]
+| True v Predicted >   | `artistic_critique` | `external_narrative` | `fandom_expression` |
+| -------------------- | ------------------- | -------------------- | ------------------- |
+| `artistic_critique`  | 12                  | 2                    | 0                   |
+| `external_narrative` | 2                   | 10                   | 0                   |
+| `fandom_expression`  | 6                   | 0                    | 0                   |
 
 ## 4 ⭐
 
@@ -169,6 +181,12 @@ external_narrative       0.91      0.83      0.87        12
 ```
 
 ### Confusion Matrix
+
+| True v Predicted >   | `artistic_critique` | `external_narrative` | `fandom_expression` |
+| -------------------- | ------------------- | -------------------- | ------------------- |
+| `artistic_critique`  | 13                  | 1                    | 0                   |
+| `external_narrative` | 1                   | 10                   | 1                   |
+| `fandom_expression`  | 2                   | 0                    | 4                   |
 
 ### Wrong Predictions
 

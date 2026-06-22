@@ -25,9 +25,9 @@ Most of the data loading, training, and evaluation code was given to me at the s
 
 ## Setup
 
-[TODO] ADD THE IPYNB
-
 ### Main Notebook
+
+The [main.ipynb](./main.ipynb) notebook is platform-agnostic: you can run it directly on your machine or upload it to Google Colab and run it there. However, to test out the local Gradio interface (which relies on the tuned model) requires the local option, which saves the model to your disk.
 
 #### Option 1: Run Locally
 
@@ -40,7 +40,7 @@ python3 -m venv .venv
 2. Install dependencies:
 
 ```bash
-pip install -r requirements_data_overview.txt
+pip install -r requirements.txt
 ```
 
 3. Populate the environment variables:
@@ -51,19 +51,19 @@ cp .env.example .env
 
 Update `GROQ_API_KEY` with your API key (freely available on [Groq](https://console.groq.com/keys)).
 
-4. In [], set the kernel to the newly created virtual environment. [TODO]
-5. Run all the cells. Execution depends on your hardware but may take 5-15 minutes.
+4. In [main.ipynb](./main.ipynb), set the kernel to the newly created virtual environment.
+5. Run all the cells. Execution depends on your hardware but may take 5-15 minutes. Install the ipykernel package when prompted.
 
 #### Option 2: Run on Colab
 
-1. Download the [] Jupyter notebook.
+1. Download the [main.ipynb](./main.ipynb) notebook.
 2. Go to [Google Colab](https://colab.research.google.com/).
 3. Go to **File** > **Upload notebook**, and select the downloaded notebook.
 4. Go to **Runtime** > **Change runtime type**, and make sure that **Hardware accelerator** is set to **T4 GPU**. Click **Save**.
 5. Get a free [Groq](https://console.groq.com/keys) API key.
 6. Go to **Secrets** (key icon on the left), set "GROQ_API_KEY" to your Groq API key, and enable **Notebook access**.
 7. Download [`data/data.csv`](./data/data.csv).
-8. Run all the cells, and upload `data.csv` when prompted in Section 1. Execution should take 5-15 minutes.
+8. Run all the cells, and upload `data.csv` when prompted in Section 1. Execution should take around 5 minutes.
 
 ### (Optional) Data Overview
 
@@ -76,11 +76,11 @@ python3 -m venv .venv
 2. Install dependencies:
 
 ```bash
-pip install -r requirements_data_overview.txt
+pip install -r requirements.txt
 ```
 
 3. In [`data/data_overview.ipynb`](./data/data_overview.ipynb), set the kernel to the newly created virtual environment.
-4. Run all the cells.
+4. Run all the cells. Install the ipykernel package when prompted.
 
 ## Data Collection
 
@@ -93,6 +93,8 @@ pip install -r requirements_data_overview.txt
 | Only direct comments to the original post (no sub-comments) | Sub-comments tend to diverge from the main topic; discourse quality possibly very different |
 | No posts with fully spelled-out curse words                 | Personal decision                                                                           |
 | No posts from deleted users                                 | Ensure visible username and a variety of linguistic styles                                  |
+
+I originally added to the data CSV file directly in VS Code via an extension that formats the editor into a minimal spreadsheet. However, it didn't have any data validation tools, which I needed to ensure I didn't repeat any posts, links, or (my plan originally) authors. Plus, it seemed to collapse all line breaks and blank lines to squeeze an entire post into a paragraph, which could have classification later down the line (especially in examples with missing punctuation).
 
 ## Labels
 
@@ -180,7 +182,7 @@ Full classification reports in [docs/bl_model_results.md](./docs/bl_model_result
 
 The baseline model performed perfectly - its accuracy, precision, recall, and F1 were all 1.00. After investigating, I found that I had a copy-paste error in the system prompt that duplicated `external_narrative`'s definition into `fandom_expression`. The LLM must've realized that mistake, skipped those definitions entirely, and resorted to the ambiguity resolution guidelines, which turned out to be so algorithmic for the 32 test samples that it classified all of them correctly. Luckily, fixing the copy-paste error introduced some imperfection, which is what the [Baseline Model Metrics](#baseline-model-metrics) show below.
 
-### Abnormally low fine-tuned model performance
+### Abnormally Low Fine-Tuned Model Performance
 
 Full details in [docs/ft_model_results.md](./docs/ft_model_results.md).
 
@@ -199,17 +201,19 @@ warmup_steps=5,         # faster warmup
 logging_steps=5         # (optional) more frequent logging
 ```
 
-This improved the metrics dramatically, but as a bonus, I designed and performed an experiment to find the optimal number of epochs and generated the following graph:
+This improved the metrics dramatically, but as a bonus, I designed and performed an experiment to find the optimal number of epochs. The experiment took around 25 minutes to run on a Google Colab T4 GPU and generated the following graph:
 
 ![Train, Validation, and Test Accuracy vs Epochs Graph](./results/acc_vs_epochs.png "Train, Validation, and Test Accuracy vs Epochs Graph")
 
-The test accuracy starts to plateau around 10 epochs, which is where the validation accuracy declines even further. So, `num_train_epochs=10` was the optimal value. I was rest assured with that since it was an empirically derived value, not educated guesswork.
+For each training session, the model already stores the best epoch's metrics, not necessarily the final epoch's. Thus, plateaus in this graph are more likely than dips. The test accuracy starts to plateau around 10 epochs, which is where the validation accuracy declines even further. So, `num_train_epochs=10` was the optimal value - backed by empirical evidence rather than merely on educated guesswork.
 
 These two adjustments led to the [Fine-Tuned Model Metrics](#fine-tuned-model-metrics) below.
 
-### Lasting lower performance for fine-tuned than baseline
+### Lasting Lower Performance for Fine-Tuned than Baseline
 
-Even after the hyperparameter tuning, the baseline model still outperforms the fine-tuned, which usually shouldn't happen. However, this may simply be due to the fact that 32 samples aren't enough to reach a definite conclusion. Or those 32 samples (split via the random seed `42`) are adversarial for the classifier but not the LLM, [TODO].
+Even after the hyperparameter tuning, the baseline model still outperforms the fine-tuned, which usually shouldn't happen. However, this may simply be due to the fact that 32 samples aren't enough to reach a definite conclusion. Or those 32 samples (split via the random seed `42`) are adversarial for the classifier but not the LLM. However, the latter got the definitions and ambiguity resolution guidelines that the fine-tuned model didn't get, which may also explain the discrepancy. Or - the most likely scenario - annotations need to be even more consistent, perhaps cross-checked via multiple human annotators.
+
+In either case, while the baseline LLM scores higher, it still wouldn't be suitable for deployment at its current state since API calls introduce latency and rate limits. A local LLM of the same size would currently be impractical (since users may not have adequate hardware) and a smaller version would sacrifice the advantage the current LLM has. Thus, an already local, fast classifier like the fine-tuned model are still more practical in a deployed setting.
 
 ## Evaluation Report
 
@@ -235,7 +239,7 @@ Even after the hyperparameter tuning, the baseline model still outperforms the f
 
 ### Confusion Matrix
 
-For fine-tuned model only.
+For fine-tuned model only. Derived from the notebook-exported [`results/confusion_matrix_final.png`](./results/confusion_matrix_final.png).
 
 | True v Predicted >   | `artistic_critique` | `external_narrative` | `fandom_expression` |
 | -------------------- | ------------------- | -------------------- | ------------------- |
@@ -281,6 +285,54 @@ This example is different than the other two: the model was only about half cert
 
 ### Sample Classifications
 
+Sourced from running Section 7 in the [] after running 5 samples through the fine-tuned model. [TODO] Table sorted by ID for display purposes. The Confidences column shows the confidence of the model's prediction on each label in this order: `artistic_critique`, `external_narrative`, and `fandom_expression`. The confidence for the corresponding predicted label is bolded.
+
+| ID  | True Label           | Predicted Label      | Status | Confidences          |
+| --- | -------------------- | -------------------- | ------ | -------------------- |
+| 10  | `fandom_expression`  | `artistic_critique`  | ❌     | **0.41**, 0.38, 0.21 |
+| 67  | `artistic_critique`  | `artistic_critique`  | ✅     | **0.55**, 0.37, 0.07 |
+| 118 | `external_narrative` | `external_narrative` | ✅     | 0.34, **0.57**, 0.09 |
+| 192 | `external_narrative` | `external_narrative` | ✅     | 0.28, **0.61**, 0.11 |
+| 198 | `external_narrative` | `external_narrative` | ✅     | 0.37, **0.43**, 0.20 |
+
+<details>
+
+<summary>Full posts</summary>
+
+**ID**: 10
+
+> The old Popheads can’t come to the phone right now. Why?
+>
+> BECAUSE THEYRE LIVING
+
+**ID**: 198
+
+> "my mistakes have been used against me" girl what? oh ffs
+
+**ID**: 67
+
+> Props to Taylor and her producers to always knowing which song to copy from. Without You by Lana for Wildest Dreams and now Never Be Like You by Flume for Delicate. This is a little bit of shade but also an honest compliment, I like Taylor's version more.
+>
+> Also I Did Something Bad sounds like a Britney song and someone said TIWWCHNT sounds like an Avril Lavinge song so that's that.
+
+**ID**: 192
+
+> a shop in Tokyo, going all the way and being extra, i love it
+>
+> https://pp.userapi.com/c834102/v834102347/1b23e/5X73WL3CvCA.jpg
+>
+> https://pp.userapi.com/c840129/v840129347/537a6/rhtCyiL3ig8.jpg
+
+**ID**: 118
+
+> [thinkpiece mode activated] Ok can we talk about the fact that Katy Perry was attacked for months for featuring Migos but there hasn't been any backlash to Taylor Swift magically becoming appropriating Caribbean? 🤔
+
+</details>
+
+It is unclear why the fine-tuned model classified sample of ID 10 as `artistic_critique`. It's not criticizing or praising the album, songs, etc. Instead, it's a spin-off of a lyric in a song called "Look What You Made Me Do." It's even more bizarre that the model assigned the least probability to `fandom_expression`. However, the model was the most unsure about this post (as seen by the distribution of confidences) perhaps because this sample may have been especially adversarial for the model.
+
+But one of the classifications that is explainable is of ID 67: the post talks about the production process and compares various pairs of songs, which falls squarely in the domain of `artistic_critique`. The model was able to pick up on these cues and correctly predict `artistic_critique`. It's also understandably why the probability for `external_narrative` is somewhat close to the leading probability: the post does mention "someone" offering an opinion (presumably in the same megathread) and the producer line may skirt into copy/copyright territory, which is `external_narrative` material. Thankfully, the model was only 7% certain about this sample being a `fandom_expression`, owing to the medium-sized post's lack of slang, exclamations, all caps, etc., which is very unlike a `fandom_expression`.
+
 ### Classifier Reflection
 
 I was content with the classifier picking up on the differences between the news, gossip, and the "meta-info" around the album from the actual album discussion like lyrics, song similarities, artistic evolution, etc. It proves that the boundary clearly existed in the data itself, which was (for the most part) annotated consistently as per effective label definitions.
@@ -290,7 +342,9 @@ I was also satisfied with the classifier identifying raw emotional and humorous 
 ## Takeaways
 
 - Manual data collection and semi-manual annotation helped stay _very_ close to the data - so much so that I started recognizing the users and posts as I reviewed the data and annotations multiple times.
+- Real-life data often contains surprises. I thought the task would be simple since the megathread contained hundreds of comments. But even with my minimal set of criteria, it was a struggle to find 200 good posts for the dataset. Also, every so often, I would find a post that I would genuinely not know how to classify, allowing me to rework my label definitions. So, in a project involving user input or real-world data, you can prepare as much as you want, but there may still be some samples that you didn't account for.
 - There was minimal coding in this project besides slight adjustments I made and the accuracy-vs-epoch experiment, which helped me focus on the annotation itself, model tuning, and reflection. As an aspiring software developer, I learned that programming isn't the focus - it's the understanding, iteration, and impact.
+- Along with encountering [obstacles](#addressing-obstacles), I also had my initial expectations challenged in enlightening ways. For example, I expected `fandom_expression` to be the easiest to identify and filter out, leaving the final, tougher decision between `artistic_critique` and `external_narrative`. However, the reality turned out to be the opposite: `fandom_expression` requires reliable tone detection, which is difficult for machine learning models to nail, let alone on 200 or so samples.
 - I don't have a Reddit account, and this was my first deep-dive into a Reddit thread. I made multiple passes through the entire megathread (since there were actually much fewer direct comments than I thought), which allowed me to better synthesize my understanding of the different types of posts and iterate on the label definitions. Oh, and of course it was fun reading about people's thoughts on my favorite album ever!
 
 ## Spec Reflection
@@ -315,71 +369,8 @@ Despite the surprise divergence, the spec especially helped me in this project b
 - **Annotation assistance**: I used Claude Code to pre-annotate 25 samples in the data. These samples are marked as `"claude_code"` in the `"annotators"` column. I did this for two reasons: to attempt to speed up my workflow (it didn't help that much), and to test my label definitions and ambiguity resolution guidelines (which was a success). I reviewed the AI annotations, ready to update the annotation myself if needed. However, to my surprise, all of its annotations matched what I would have given, so no re-prompt or manual override was needed.
 - **Identify patterns in misclassified samples**: After classification, I again used Claude Code to find patterns in the 5 misclassifications by the fine-tuned model. It was moderately helpful, but it would've made a bigger difference had there been many more misclassifications to synthesize. I agreed with the model's heads-up about the tone-blindness when it came to `fandom_expression`, later finding my own patterns and writing [Misclassifications](#misclassifications) section myself.
 
----
+## Limitations
 
-## Notes
-
-- Got me to read Reddit posts for once!
-- https://www.reddit.com/r/popheads/comments/7brx3o/megathread_taylor_swift_reputation/
-- Post selection criteria:
-  - Only immediate replies, not replies of replies
-  - No deleted posts
-  - Only family friendly posts
-- Ambiguity resolution - priority levels due to post effort and abundance for each label
-- Stress testing conclusion:
-  - Boundary btwn `artistic_critique` and `external_narrative` much more critical to sharpen
-  - More frequent ambiguities in that boundary
-  - `fandom_expression` is the unique one because
-    - Its tone is completely different - raw emotion, not meditative or explicative
-    - It is often standalone or gets dominated in content or centrality by the other two
-- Had to use Google Sheets since CSV extension automatically squeezed text into one paragraph
-- Annotating 200 samples:
-  - Unique username constraint very limiting
-  - Reached the bottom of the 2.9k-comment megathread
-  - Got close with the data (started recognizing the usernames and posts)
-  - Links couldn't be copied in plaintext, collapsing a part chunk of context behind some posts
-  - Lesson learned - data is _highly_ unclean - even in a thread of 2.4 comments, it was difficult to find 200 good ones
-
-- Zero-shot baseline:
-
-Classification report:
-
-Fixed! A simple copy-paste error that caused the LLM to skip the general instructions and immediately resort to the ambiguity resolution steps, which turned out to be so algorithmic that it got perfect accuracy on the 32 samples.
-
-- Fine-tuned:
-  - No hyperparams changed at first (works well for 100-500 samples)
-  - But needed to due to abnormally low accuracy
-  - Optimal number of epochs experiment - took 25 min to run
-    - Distilbert already returned the best epoch's metrics, so plateaus would be more common than dips
-
-Results comparison:
-
-```
-==================================================
-RESULTS COMPARISON
-==================================================
-Model                               Accuracy
----------------------------------------------
-Zero-shot baseline (Groq)              0.968
-Fine-tuned DistilBERT                  0.844
----------------------------------------------
-
-Fine-tuning regression: 0.124
-```
-
-Eval results:
-
-```
-{
-  "baseline_accuracy": 0.9677,
-  "finetuned_accuracy": 0.8438,
-  "improvement": -0.124,
-  "test_set_size": 32,
-  "label_map": {
-    "artistic_critique": 0,
-    "external_narrative": 1,
-    "fandom_expression": 2
-  },
-  "model": "distilbert-base-uncased"
-}
-```
+- The data includes 213 entries, which isn't enough samples to sharpen the fine-tuned model's classification.
+- The posts in dataset are stored in plaintext, stripped of all formatting (e.g. bold, italics, links, quote blocks, etc.). This makes some edge-case posts more difficult to classify since the original version relied on formatting to convey meaning. For example, the sample with ID 190 ("My local KFC did this") actually linked an image via the word "this", which got completely lost during data collection, leaving a message looks incomplete.
+- The baseline model still outperforms the fine-tuned model. Perhaps a larger sample size or more consistent annotations (cross-checked by multiple annotators) may help.

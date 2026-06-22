@@ -4,26 +4,32 @@ _Krish A. Patel_
 
 _CodePath AI201: Applications of AI Engineering Project 3 (Summer 2026)_
 
-[TODO] Intro - community, what was given, what I did (annotation, reports)
+Posts in online forums often can be categorized by discourse quality (e.g. reaction, review, hot take, etc.). I chose to focus on a [Reddit megathread](https://www.reddit.com/r/popheads/comments/7brx3o/megathread_taylor_swift_reputation/) about Taylor Swift's 6th studio album, _reputation_. This megathread contains thousands of posts from around the album's launch. Some talked about the actual songs on the album, some talked about the records being broken by the album in the first few hours, and some simply expressed pure excitement and enthusiasm. One can intuitively notice these distinct types of post - but the challenge is translating this nebulous intuition into a well-defined recipe so that machine learning models can successfully identify and classify different types of posts. Developing an accurate classifier would allow users to filter posts by discourse quality: a user that is strictly interested in opinions on the album can filter out the news around the album and fan excitement.
+
+Most of the data loading, training, and evaluation code was given to me at the start of the project. My main job was to devise clear label definitions, collect and annotate 200+ samples, run and tune the classifier, and communicate the results. Since it was my first time embarking on a data collection project of this scale on my own, I encountered various obstacles along the way that allowed me to appreciate the art of data annotation as well as model fine-tuning.
+
+## Demo
+
+[TODO]
 
 ## Tech Stack
+
+| Component                | Technology                                       |
+| ------------------------ | ------------------------------------------------ |
+| Data collection          | Manual                                           |
+| Data annotation          | Mostly manual; some AI-assisted + human-reviewed |
+| Baseline LLM model       | `llama-3.3-70b-versatile` (API-based)            |
+| Fine-tuned encoder model | `distilbert-base-uncased` (local)                |
+| Evaluation pipeline      | Sklearn                                          |
+| Interface                | Gradio                                           |
 
 ## Setup
 
 [TODO] ADD THE IPYNB
 
-### Google Colab Notebook
+### Main Notebook
 
-1. Download the [] Jupyter notebook.
-2. Go to [Google Colab](https://colab.research.google.com/).
-3. Go to **File** > **Upload notebook**, and select the downloaded notebook.
-4. Go to **Runtime** > **Change runtime type**, and make sure that **Hardware accelerator** is set to **T4 GPU**. Click **Save**.
-5. Get a free [Groq](https://console.groq.com/keys) API key.
-6. Go to **Secrets** (key icon on the left), set "GROQ_API_KEY" to your Groq API key, and enable **Notebook access**.
-7. Download [`data/data.csv`](./data/data.csv).
-8. Run all the cells, and upload `data.csv` when prompted in Section 1.
-
-### (Optional) See Data Overview
+#### Option 1: Run Locally
 
 1. Create a virtual environment:
 
@@ -34,18 +40,180 @@ python3 -m venv .venv
 2. Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements_data_overview.txt
 ```
 
-3. Run all the cells in [`data/data_overview.ipynb`](./data/data_overview.ipynb).
+3. Populate the environment variables:
+
+```bash
+cp .env.example .env
+```
+
+Update `GROQ_API_KEY` with your API key (freely available on [Groq](https://console.groq.com/keys)).
+
+4. In [], set the kernel to the newly created virtual environment. [TODO]
+5. Run all the cells. Execution depends on your hardware but may take 5-15 minutes.
+
+#### Option 2: Run on Colab
+
+1. Download the [] Jupyter notebook.
+2. Go to [Google Colab](https://colab.research.google.com/).
+3. Go to **File** > **Upload notebook**, and select the downloaded notebook.
+4. Go to **Runtime** > **Change runtime type**, and make sure that **Hardware accelerator** is set to **T4 GPU**. Click **Save**.
+5. Get a free [Groq](https://console.groq.com/keys) API key.
+6. Go to **Secrets** (key icon on the left), set "GROQ_API_KEY" to your Groq API key, and enable **Notebook access**.
+7. Download [`data/data.csv`](./data/data.csv).
+8. Run all the cells, and upload `data.csv` when prompted in Section 1. Execution should take 5-15 minutes.
+
+### (Optional) Data Overview
+
+1. Create a virtual environment:
+
+```bash
+python3 -m venv .venv
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements_data_overview.txt
+```
+
+3. In [`data/data_overview.ipynb`](./data/data_overview.ipynb), set the kernel to the newly created virtual environment.
+4. Run all the cells.
+
+## Data Collection
+
+- **Source**: posts in the [Taylor Swift reputation Reddit megathread](https://www.reddit.com/r/popheads/comments/7brx3o/megathread_taylor_swift_reputation/)
+- **Method**: manual (copy-pasting, no scraping)
+- **Selection criteria**:
+
+| Criterion                                                   | Reason                                                                                      |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Only direct comments to the original post (no sub-comments) | Sub-comments tend to diverge from the main topic; discourse quality possibly very different |
+| No posts with fully spelled-out curse words                 | Personal decision                                                                           |
+| No posts from deleted users                                 | Ensure visible username and a variety of linguistic styles                                  |
 
 ## Labels
 
+Each post in the megathread can be classified into one of 3 labels:
+
+- `artistic_critique` - Primarily contains analysis of the artwork itself and artistic choices (e.g., sound, composition, melody, rhythm, lyrics, genre, production, album song order, artistic evolution, comparisons with other artistic works, etc). Also includes emotions and opinions expressed because of the artwork and artistic choices. Tone must be mostly matter-of-fact with minimal to no joking, slang, caps, etc.
+  - **Example**: "Wow this album is not good. I was hoping for something in the vein of 1989 and this is... not."
+- `external_narrative` - Primarily contains stories or discussion about the broader context (e.g. current events, gossip, celebrity feuds/drama, Billboard charts, sales, reviews, etc.). Includes personal context too, such as discussion about people and situations around the post publisher (e.g. mentions of family, friends, roommates; decisions to buy the album; etc.). Tone must be mostly matter-of-fact with minimal to no joking, slang, caps, etc.
+  - **Example**: "Just got my Target magazine exclusive version in the mail! Can't wait to hear Reputation. Interested in hearing where Taylor is after 1989 and the whole Kanye debacle."
+- `fandom_expression` - Primarily contains standalone emotional assertions, visceral reactions, or pure exclamations without much logic or elaboration (e.g., hype, witty remark, meta-joke, exaggeration, etc.). Sometimes can mix in artwork opinions and current event mentions, but is often distinguishable by a strong use of slang, all caps, emojis, etc.
+  - **Example**: "I LIVED AND DIED WAITING FOR THIS ALBUM UP UNTIL NOW BUT MY SNAKE QUEEN HAS RESURRECTED ME AND I AM HERE TO PRAY"
+
+Even with specific definitions, there will be cases with ambiguous labeling. For example, a post may include both gossip from the music industry and a brief note about the lyrical structure of a song. Should that be classified as `artistic_critique` or `external_narrative`? Another post may be talking about album leaks but uses all caps and repeated letters (e.g. "OMGGGGG IT LEAKED") - is this `external_narrative` or `fandom_expression`?
+
+Thus, ambiguity resolution guidelines are needed to ensure consistent annotations, overriding any earlier notions that vary from annotator to annotator:
+
+1. Don't look at content alone - check the tone too. An overly informal tone with a heavy use of slang, caps, etc. is a strong case for `fandom_expression`.
+2. Choose the label that represents the at least 2/3 of the post's content. When using this criterion, there should be a clear winner.
+3. If there's roughly an equal distribution of post content that can match multiple labels, and the decision is between `artistic_critique` and `external_narrative`, choose the label that forms the main idea or conclusion reached in the post. For example, if celebrity feuds are cited as the reason for a song's beat, then `artistic_critique` takes precedence. Additionally quoted content should not be used as the basis for classification. For example, if someone talks about reviews and pastes a long quote from a review site, the post is still `external_narrative` even if most of the post content may now technically be feedback-oriented due to the excerpt.
+4. If there is no clear main idea or conclusion in the post, or if one of the label candidates is `fandom_expression`, use this strict prioritization: `artistic_critique` takes priority over `external_narrative`, which takes priority over `fandom_expression`.
+
+The last step uses strict prioritization as per post importance: it's more useful to highlight `artistic_critique` posts to a potential new album buyer or everyday music enjoyer than `external_narrative`, which are both much more knowledge than `fandom_expression`.
+
+It's important to realize that this project does _not_ involve sentiment analysis. All of these labels may contain both positive and negative ideas or emotions: a post liking/disliking the album, talking about album success/failure, or showing raw excitement/anger.
+
+## Data Overview
+
+I originally aimed to ensure posts from unique users only, but that became unsustainable in light of my 200-sample goal. I dropped that requirement, but the user variety still turned remained strong. I also consciously selected posts to balance the labels as much as possible. To my surprise, `fandom_expression`s were quite rare compared to the other two types of posts especially when combined with my selection criteria above (e.g. deleted users posted a good number of `fandom_expression`s).
+
+```
+213 entries
+169 unique post authors
+25 human-reviewed AI annotations
+
+Label distribution:
+artistic_critique    89   41.78%
+external_narrative   84   39.44%
+fandom_expression    40   18.78%
+```
+
+## Baseline Classification
+
+Using a baseline model helps see where a fine-tuned shines. I performed zero-shot classification via Groq's `llama-3.3-70b-versatile` to see how a pre-trained LLM would perform on a detailed classification task.
+
+<details>
+
+<summary>System prompt</summary>
+
+> You are classifying posts from Taylor Swift's reputation album release Reddit megathread.
+> Assign each post to exactly one of the following categories.
+>
+> artistic_critique: Primarily contains analysis of the artwork itself and artistic choices (e.g., sound, composition, melody, rhythm, lyrics, genre, production, album song order, artistic evolution, comparisons with other artistic works, etc). Also includes emotions and opinions expressed because of the artwork and artistic choices. Tone must be mostly matter-of-fact with minimal to no joking, slang, caps, etc.
+> Example: "Wow this album is not good. I was hoping for something in the vein of 1989 and this is... not."
+>
+> external_narrative: Primarily contains stories or discussion about the broader context (e.g. current events, gossip, celebrity feuds/drama, Billboard charts, sales, reviews, etc.). Includes personal context too, such as discussion about people and situations around the post publisher (e.g. mentions of family, friends, roommates; decisions to buy the album; etc.). Tone must be mostly matter-of-fact with minimal to no joking, slang, caps, etc.
+> Example: "Just got my Target magazine exclusive version in the mail! Can't wait to hear Reputation. Interested in hearing where Taylor is after 1989 and the whole Kanye debacle."
+>
+> fandom_expression: Primarily contains standalone emotional assertions, visceral reactions, or pure exclamations without much logic or elaboration (e.g., hype, witty remark, meta-joke, exaggeration, etc.). Sometimes can mix in artwork opinions and current event mentions, but is often distinguishable by a strong use of slang, all caps, emojis, etc.
+> Example: "I LIVED AND DIED WAITING FOR THIS ALBUM UP UNTIL NOW BUT MY SNAKE QUEEN HAS RESURRECTED ME AND I AM HERE TO PRAY"
+>
+> To resolve ambiguous cases, follow these guidelines in order:
+>
+> 1. Don't look at content alone - check the tone too. An overly informal tone with a heavy use of slang, caps, etc. is a strong case for `fandom_expression`.
+> 2. Choose the label that represents the at least 2/3 of the post's content. When using this criterion, there should be a clear winner.
+> 3. If there's roughly an equal distribution of post content that can match multiple labels, and the decision is between `artistic_critique` and `external_narrative`, choose the label that forms the main idea or conclusion reached in the post. For example, if celebrity feuds are cited as the reason for a song's beat, then `artistic_critique` takes precedence. Additionally quoted content should not be used as the basis for classification. For example, if someone talks about reviews and pastes a long quote from a review site, the post is still `external_narrative` even if most of the post content may now technically be feedback-oriented due to the excerpt.
+> 4. If there is no clear main idea or conclusion in the post, or if one of the label candidates is `fandom_expression`, use this strict prioritization: `artistic_critique` takes priority over `external_narrative`, which takes priority over `fandom_expression`.
+>
+> Respond with ONLY the label name.
+> Do not explain your reasoning.
+>
+> Valid labels:
+> artistic_critique
+> external_narrative
+> fandom_expression
+
+</details>
+
+## Addressing Obstacles
+
+I faces two major obstacles during this project:
+
+### Perfect Baseline Model Performance
+
+Full classification reports in [docs/bl_model_results.md](./docs/bl_model_results.md#classification-report-1).
+
+The baseline model performed perfectly - its accuracy, precision, recall, and F1 were all 1.00. After investigating, I found that I had a copy-paste error in the system prompt that duplicated `external_narrative`'s definition into `fandom_expression`. The LLM must've realized that mistake, skipped those definitions entirely, and resorted to the ambiguity resolution guidelines, which turned out to be so algorithmic for the 32 test samples that it classified all of them correctly. Luckily, fixing the copy-paste error introduced some imperfection, which is what the [Baseline Model Metrics](#baseline-model-metrics) show below.
+
+### Abnormally low fine-tuned model performance
+
+Full details in [docs/ft_model_results.md](./docs/ft_model_results.md).
+
+The fine-tuned model was supposed to outperform the baseline model. However, it got a 0.44 accuracy and 0.00 precision, recall, and F1 for two of three classes - a suspiciously bad performance. After debugging this via Gemini, I found out that some of the original hyperparameters didn't fit my small dataset:
+
+- 70% train split; 200 total samples -> 140 training samples
+- `per_device_train_batch_size=16` -> 140 / 16 ~ 9 steps per epoch
+- `num_train_epochs=3` -> ~27 training steps
+- `warmup_steps=50` (>`27`) -> `learning_rate` never reaches `2e-5`
+
+Thus I tweaked the following hyperparameters to give the model enough training time at the adequate learning rate:
+
+```py
+num_train_epochs=6,     # more training time
+warmup_steps=5,         # faster warmup
+logging_steps=5         # (optional) more frequent logging
+```
+
+This improved the metrics dramatically, but as a bonus, I designed and performed an experiment to find the optimal number of epochs and generated the following graph:
+
+![Train, Validation, and Test Accuracy vs Epochs Graph](./results/acc_vs_epochs.png "Train, Validation, and Test Accuracy vs Epochs Graph")
+
+The test accuracy starts to plateau around 10 epochs, which is where the validation accuracy declines even further. So, `num_train_epochs=10` was the optimal value. I was rest assured with that since it was an empirically derived value, not educated guesswork.
+
+These two adjustments led to the [Fine-Tuned Model Metrics](#fine-tuned-model-metrics) below.
+
+### Lasting lower performance for fine-tuned than baseline
+
+Even after the hyperparameter tuning, the baseline model still outperforms the fine-tuned, which usually shouldn't happen. However, this may simply be due to the fact that 32 samples aren't enough to reach a definite conclusion. Or those 32 samples (split via the random seed `42`) are adversarial for the classifier but not the LLM, [TODO].
+
 ## Evaluation Report
 
-### Metrics
-
-#### Baseline
+### Baseline Model Metrics
 
 **Accuracy**: 0.968
 
@@ -55,7 +223,7 @@ pip install -r requirements.txt
 | `external_narrative` | 1.00      | 0.91   | 0.95 |
 | `fandom_expression`  | 1.00      | 1.00   | 1.00 |
 
-#### Fine-Tuned
+### Fine-Tuned Model Metrics
 
 **Accuracy**: 0.844
 
@@ -77,7 +245,7 @@ For fine-tuned model only.
 
 ### Misclassifications
 
-Pulled from [`docs/ft_model_results.md`](./docs/ft_model_results.md#wrong-predictions).
+For the fine-tuned model. Pulled from [`docs/ft_model_results.md`](./docs/ft_model_results.md#wrong-predictions).
 
 These 3 wrong classifications shed light on the tricky boundaries between `fandom_expression` and the other two labels made even fuzzier by the model's imperfect tone identification of posts, which is a key deciding factor for `fandom_expression`.
 
@@ -115,7 +283,15 @@ This example is different than the other two: the model was only about half cert
 
 ### Classifier Reflection
 
-## Other Takeaways
+I was content with the classifier picking up on the differences between the news, gossip, and the "meta-info" around the album from the actual album discussion like lyrics, song similarities, artistic evolution, etc. It proves that the boundary clearly existed in the data itself, which was (for the most part) annotated consistently as per effective label definitions.
+
+I was also satisfied with the classifier identifying raw emotional and humorous posts from the rest. This required an advanced level of tone detection, which is very prone to annotation inconsistencies despite thorough definitions and is difficult even for an LLM to classify correctly (let alone an encoder model) - so, I went in expecting most misclassifications to be involving this type of posts. In that part I wasn't surprised by the results, but I was surprised that there weren't more than 5 misclassifications in total. This may be a testament to the annotations being consistent and/or the definitions being thorough, though there is definitely still room for improvement in both aspects.
+
+## Takeaways
+
+- Manual data collection and semi-manual annotation helped stay _very_ close to the data - so much so that I started recognizing the users and posts as I reviewed the data and annotations multiple times.
+- There was minimal coding in this project besides slight adjustments I made and the accuracy-vs-epoch experiment, which helped me focus on the annotation itself, model tuning, and reflection. As an aspiring software developer, I learned that programming isn't the focus - it's the understanding, iteration, and impact.
+- I don't have a Reddit account, and this was my first deep-dive into a Reddit thread. I made multiple passes through the entire megathread (since there were actually much fewer direct comments than I thought), which allowed me to better synthesize my understanding of the different types of posts and iterate on the label definitions. Oh, and of course it was fun reading about people's thoughts on my favorite album ever!
 
 ## Spec Reflection
 
@@ -149,7 +325,6 @@ Despite the surprise divergence, the spec especially helped me in this project b
   - Only immediate replies, not replies of replies
   - No deleted posts
   - Only family friendly posts
-- Labels: `artistic_critique`, `external_narrative`, `fandom_expression`
 - Ambiguity resolution - priority levels due to post effort and abundance for each label
 - Stress testing conclusion:
   - Boundary btwn `artistic_critique` and `external_narrative` much more critical to sharpen

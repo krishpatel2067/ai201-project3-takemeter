@@ -137,7 +137,6 @@ I will manually copy-paste suitable posts from the Reddit megathread in a CSV fi
 Not all posts from the megathread will be chosen. Specifically, posts:
 
 - Must be direct replies to the original post (no replies to replies)
-- Must be loosely related to the main topic
 - Must not contain full curse words
 - Must _not_ be by deleted users
 

@@ -29,7 +29,7 @@ Most of the data loading, training, and evaluation code was given to me at the s
 
 The [main.ipynb](./main.ipynb) notebook is platform-agnostic: you can run it directly on your machine or upload it to Google Colab and run it there. However, to test out the local Gradio interface (which relies on the tuned model) requires the local option, which saves the model to your disk.
 
-#### Option 1: Run Locally
+#### Option 1: Run Locally (Recommended)
 
 1. Create a virtual environment:
 
@@ -52,9 +52,18 @@ cp .env.example .env
 Update `GROQ_API_KEY` with your API key (freely available on [Groq](https://console.groq.com/keys)).
 
 4. In [main.ipynb](./main.ipynb), set the kernel to the newly created virtual environment.
-5. Run all the cells. Execution depends on your hardware but may take 5-15 minutes. Install the ipykernel package when prompted.
+5. Run all the cells. Install the ipykernel package when prompted. Execution time depends on your hardware but may take 5-15 minutes.
+6. (Optional) The interface automatically finds the model's highest checkpoint directory. But if you have multiple checkpoint files and want to choose a non-highest checkpoint directory, update `MODEL_DIR` in your `.env` file with the path of that checkpoint directory, which will usually be in the format `takemeter-model/checkpoint-*` (e.g. `takemeter-model/checkpoint-80`).
+
+7. Run the app:
+
+```bash
+gradio app.py
+```
 
 #### Option 2: Run on Colab
+
+This method doesn't allow you to classify a custom post via an interface.
 
 1. Download the [main.ipynb](./main.ipynb) notebook.
 2. Go to [Google Colab](https://colab.research.google.com/).
@@ -285,7 +294,7 @@ This example is different than the other two: the model was only about half cert
 
 ### Sample Classifications
 
-Sourced from running Section 7 in the [] after running 5 samples through the fine-tuned model. [TODO] Table sorted by ID for display purposes. The Confidences column shows the confidence of the model's prediction on each label in this order: `artistic_critique`, `external_narrative`, and `fandom_expression`. The confidence for the corresponding predicted label is bolded.
+Sourced from running Section 7 in the [main.ipynb](./main.ipynb) after running 5 samples through the fine-tuned model. Table sorted by ID for display purposes. The Confidences column shows the confidence of the model's prediction on each label in this order: `artistic_critique`, `external_narrative`, and `fandom_expression`. The confidence for the corresponding predicted label is bolded.
 
 | ID  | True Label           | Predicted Label      | Status | Confidences          |
 | --- | -------------------- | -------------------- | ------ | -------------------- |

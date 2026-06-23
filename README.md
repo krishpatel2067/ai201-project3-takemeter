@@ -23,11 +23,31 @@ Most of the data loading, training, and evaluation code was given to me at the s
 | Evaluation pipeline      | Sklearn                                          |
 | Interface                | Gradio                                           |
 
+## Project Structure
+
+```
++ data/
+|-- data.csv              # main dataset
+|-- llm_annot.csv         # LLM-annotated samples (before training)
+|-- human2_annot.csv      # Another human's annotated samples (after training)
+|-- data_overview.ipynb   # Show dataset info like label + author distribution
++ docs/
+|-- bl_model_results.md   # Baseline model results across iterations
+|-- ft_model_results.md   # Fine-tuned model results across iterations
+|-- stress_testing.md     # Pre-annotation stress-testing to tweak definitions
++ results/                # contains plots, confusion matrices, and eval results
++ app.py                  # Manage Gradio interface
++ model_manager.py        # Load and classify with trained model saved to disk
++ main.ipynb              # Train model and run essential eval; most code given
++ more_val.ipynb          # Run sample classifications, confidence calibration
++ planning.md             # Spec and planning doc
+```
+
 ## Setup
 
 ### Main Notebook
 
-The [main.ipynb](./main.ipynb) notebook is platform-agnostic: you can run it directly on your machine or upload it to Google Colab and run it there. However, to test out the local Gradio interface (which relies on the tuned model) requires the local option, which saves the model to your disk.
+The [`main.ipynb`](./main.ipynb) notebook is platform-agnostic: you can run it directly on your machine or upload it to Google Colab and run it there. However, to test out the local Gradio interface (which relies on the tuned model) requires the local option, which saves the model to your disk.
 
 #### Option 1: Run Locally (Recommended)
 
@@ -51,7 +71,7 @@ cp .env.example .env
 
 Update `GROQ_API_KEY` with your API key (freely available on [Groq](https://console.groq.com/keys)).
 
-4. In [main.ipynb](./main.ipynb), set the kernel to the newly created virtual environment.
+4. In [`main.ipynb`](./main.ipynb), set the kernel to the newly created virtual environment.
 5. Run all the cells. Install the ipykernel package when prompted. Execution time depends on your hardware but may take 5-15 minutes.
 6. (Optional) The interface automatically finds the model's highest checkpoint directory. But if you have multiple checkpoint files and want to choose a non-highest checkpoint directory, update `MODEL_DIR` in your `.env` file with the path of that checkpoint directory, which will usually be in the format `takemeter-model/checkpoint-*` (e.g. `takemeter-model/checkpoint-80`).
 
@@ -65,7 +85,7 @@ gradio app.py
 
 This method doesn't allow you to classify a custom post via an interface.
 
-1. Download the [main.ipynb](./main.ipynb) notebook.
+1. Download the [`main.ipynb`](./main.ipynb) notebook.
 2. Go to [Google Colab](https://colab.research.google.com/).
 3. Go to **File** > **Upload notebook**, and select the downloaded notebook.
 4. Go to **Runtime** > **Change runtime type**, and make sure that **Hardware accelerator** is set to **T4 GPU**. Click **Save**.
@@ -129,6 +149,55 @@ The last step uses strict prioritization as per post importance: it's more usefu
 
 It's important to realize that this project does _not_ involve sentiment analysis. All of these labels may contain both positive and negative ideas or emotions: a post liking/disliking the album, talking about album success/failure, or showing raw excitement/anger.
 
+## Inter-Annotator Reliability
+
+**Agreement rate**: 27/39 (69%)
+
+Sourced from [`data_overview`](./data/data_overview.ipynb) Section 2. I reached out to a friend, sent them the [Labels](#labels) section of this file, and supplied them with a subset of the main data (IDs 1-40) with my labels removed for a blind test. The table below is a sample of annotation disagreements, sorted by ID for display purposes.
+
+Note: this was done at the very end of the project - after training and evaluation. So, this is a reflection-based test to reveal any lessons for future projects.
+
+| ID  | My Label             | Human 2 Label       |
+| --- | -------------------- | ------------------- |
+| 3   | `artistic_critique`  | `fandom_expression` |
+| 16  | `external_narrative` | `fandom_expression` |
+| 27  | `artistic_critique`  | `fandom_expression` |
+| 31  | `external_narrative` | `fandom_expression` |
+| 35  | `artistic_critique`  | `fandom_expression` |
+
+<details>
+<summary>Full posts</summary>
+
+**ID 3**:
+
+> Even upon first listen, "Getaway Car" became my favorite song of the year. Its got everything I want from Taylor and Jack: 'this love couldn't last' lyrics, a propulsive beat, and Jack's 80s production. I don't care if it is really close to Out Of The Woods.
+>
+> And that outro? Jee-zus. Killed me.
+
+**ID 16**:
+
+> Mark My Words. End Game will be an 8-week #1 Billboard Hot 100 Song. Thank you. Bye.
+
+**ID 27**:
+
+> Wow this album is not good. I was hoping for something in the vein of 1989 and this is... not.
+
+**ID 31**:
+
+> New Years Day is going straight into my Christmas playlist.
+
+**ID 35**:
+
+> Getaway Car has to be a single, it's such a quintessential Taylor bop
+
+</details>
+
+Out of the 12 disagreements between the other annotator and I, 9 of them involved their annotation being `fandom_expression`. Focusing on the sample of 5 disagreements above, which perfectly reflects this single-label imbalance, it's understandable why the other annotator classified all the posts as `fandom_expression`: each post contains some amount of idiom, exaggerations, or language with flair ("Killed me.", "Thank you. Bye.", "is... not", "straight into", "Taylor bop").
+
+Nonetheless, while there is 69% agreement between two annotators in a sample of 39 posts, there is still much room for improvement. The label definitions may need to be more thorough. More importantly, a separate, annotator-oriented read-up may be necessary to get all annotators on the same page. Such a read-up would include more (adversarial/edge-case) examples and a more thorough set of ambiguity resolution guidelines.
+
+However, a portion of the disagreements can also be attributed to the nature of my simple test. In a large real-world project, annotators may also be given a communication channel to ask for help and flag certain data, fueling iteration on label definitions and more accurate labeling as a result. Moreover, there may be a hierarchy of annotators, in which high-level annotators compare multiple annotations and choose the best one, reinforcing strongly agreed upon annotations and revealing disagreements for revision. None of these components were used in my simple test, perhaps making it miss out on some of these benefits.
+
 ## Data Overview
 
 I originally aimed to ensure posts from unique users only, but that became unsustainable in light of my 200-sample goal. I dropped that requirement, but the user variety still turned remained strong. I also consciously selected posts to balance the labels as much as possible. To my surprise, `fandom_expression`s were quite rare compared to the other two types of posts especially when combined with my selection criteria above (e.g. deleted users posted a good number of `fandom_expression`s).
@@ -144,12 +213,11 @@ external_narrative   84   39.44%
 fandom_expression    40   18.78%
 ```
 
-## Baseline Classification
+## Baseline Model System Prompt
 
 Using a baseline model helps see where a fine-tuned shines. I performed zero-shot classification via Groq's `llama-3.3-70b-versatile` to see how a pre-trained LLM would perform on a detailed classification task.
 
 <details>
-
 <summary>System prompt</summary>
 
 > You are classifying posts from Taylor Swift's reputation album release Reddit megathread.
@@ -187,13 +255,13 @@ I faces two major obstacles during this project:
 
 ### Perfect Baseline Model Performance
 
-Full classification reports in [docs/bl_model_results.md](./docs/bl_model_results.md#classification-report-1).
+Full classification reports in [`docs/bl_model_results.md`](./docs/bl_model_results.md#classification-report-1).
 
 The baseline model performed perfectly - its accuracy, precision, recall, and F1 were all 1.00. After investigating, I found that I had a copy-paste error in the system prompt that duplicated `external_narrative`'s definition into `fandom_expression`. The LLM must've realized that mistake, skipped those definitions entirely, and resorted to the ambiguity resolution guidelines, which turned out to be so algorithmic for the 32 test samples that it classified all of them correctly. Luckily, fixing the copy-paste error introduced some imperfection, which is what the [Baseline Model Metrics](#baseline-model-metrics) show below.
 
 ### Abnormally Low Fine-Tuned Model Performance
 
-Full details in [docs/ft_model_results.md](./docs/ft_model_results.md).
+Full details in [`docs/ft_model_results.md`](./docs/ft_model_results.md).
 
 The fine-tuned model was supposed to outperform the baseline model. However, it got a 0.44 accuracy and 0.00 precision, recall, and F1 for two of three classes - a suspiciously bad performance. After debugging this via Gemini, I found out that some of the original hyperparameters didn't fit my small dataset:
 
@@ -294,59 +362,64 @@ This example is different than the other two: the model was only about half cert
 
 ### Sample Classifications
 
-Sourced from running Section 7 in the [main.ipynb](./main.ipynb) after running 5 samples through the fine-tuned model. Table sorted by ID for display purposes. The Confidences column shows the confidence of the model's prediction on each label in this order: `artistic_critique`, `external_narrative`, and `fandom_expression`. The confidence for the corresponding predicted label is bolded.
+Sourced from [`more_eval.ipynb`](./more_eval.ipynb) Section 1's output after running 5 test set samples through the fine-tuned model. Table sorted by ID for display purposes. The Confidences column shows the confidence of the model's prediction on each label in this order: `artistic_critique`, `external_narrative`, and `fandom_expression`. The confidence for the corresponding predicted label is bolded.
 
 | ID  | True Label           | Predicted Label      | Status | Confidences          |
 | --- | -------------------- | -------------------- | ------ | -------------------- |
-| 10  | `fandom_expression`  | `artistic_critique`  | ❌     | **0.41**, 0.38, 0.21 |
-| 67  | `artistic_critique`  | `artistic_critique`  | ✅     | **0.55**, 0.37, 0.07 |
-| 118 | `external_narrative` | `external_narrative` | ✅     | 0.34, **0.57**, 0.09 |
-| 192 | `external_narrative` | `external_narrative` | ✅     | 0.28, **0.61**, 0.11 |
-| 198 | `external_narrative` | `external_narrative` | ✅     | 0.37, **0.43**, 0.20 |
+| 38  | `fandom_expression`  | `artistic_critique`  | ❌     | **0.59**, 0.17, 0.25 |
+| 69  | `fandom_expression`  | `artistic_critique ` | ❌     | **0.79**, 0.11, 0.10 |
+| 89  | `external_narrative` | `external_narrative` | ✅     | 0.10, **0.79**, 0.10 |
+| 130 | `fandom_expression`  | `artistic_critique ` | ❌     | **0.35**, 0.31, 0.34 |
+| 179 | `fandom_expression`  | `fandom_expression`  | ✅     | 0.36, 0.27, **0.37** |
 
 <details>
-
 <summary>Full posts</summary>
 
-**ID**: 10
+**ID**: 38
 
-> The old Popheads can’t come to the phone right now. Why?
->
-> BECAUSE THEYRE LIVING
+> DANCING WITH OUR HANDS TIED IS A BANGERRRR
 
-**ID**: 198
+**ID**: 69
 
-> "my mistakes have been used against me" girl what? oh ffs
+> NOT Future's verses are better than Taylor's I'm dead
 
-**ID**: 67
+**ID**: 89
 
-> Props to Taylor and her producers to always knowing which song to copy from. Without You by Lana for Wildest Dreams and now Never Be Like You by Flume for Delicate. This is a little bit of shade but also an honest compliment, I like Taylor's version more.
->
-> Also I Did Something Bad sounds like a Britney song and someone said TIWWCHNT sounds like an Avril Lavinge song so that's that.
+> Does anyone know if the magazines are different or are they all the same inside material
 
-**ID**: 192
+**ID**: 130
 
-> a shop in Tokyo, going all the way and being extra, i love it
->
-> https://pp.userapi.com/c834102/v834102347/1b23e/5X73WL3CvCA.jpg
->
-> https://pp.userapi.com/c840129/v840129347/537a6/rhtCyiL3ig8.jpg
+> Hey Mama Day
 
-**ID**: 118
+**ID**: 179
 
-> [thinkpiece mode activated] Ok can we talk about the fact that Katy Perry was attacked for months for featuring Migos but there hasn't been any backlash to Taylor Swift magically becoming appropriating Caribbean? 🤔
+> I'm already quaking
 
 </details>
 
-It is unclear why the fine-tuned model classified sample of ID 10 as `artistic_critique`. It's not criticizing or praising the album, songs, etc. Instead, it's a spin-off of a lyric in a song called "Look What You Made Me Do." It's even more bizarre that the model assigned the least probability to `fandom_expression`. However, the model was the most unsure about this post (as seen by the distribution of confidences) perhaps because this sample may have been especially adversarial for the model.
+These sample classifications can be analyzed in pairs. Predictions for IDs 38 and 69 were both incorrect: `artistic_critique` instead of the correct label, `fandom_expression`. Understandably, the model is less certain about ID 38's sample than ID 69's, which discusses lyrics and leads the model to be more certain about `artistic_critique`.
 
-But one of the classifications that is explainable is of ID 67: the post talks about the production process and compares various pairs of songs, which falls squarely in the domain of `artistic_critique`. The model was able to pick up on these cues and correctly predict `artistic_critique`. It's also understandably why the probability for `external_narrative` is somewhat close to the leading probability: the post does mention "someone" offering an opinion (presumably in the same megathread) and the producer line may skirt into copy/copyright territory, which is `external_narrative` material. Thankfully, the model was only 7% certain about this sample being a `fandom_expression`, owing to the medium-sized post's lack of slang, exclamations, all caps, etc., which is very unlike a `fandom_expression`.
+The other pair of noteworthy predictions are those for IDs 130 and 179. Both represent a confused model - the confidence scores are roughly evenly distributed across the 3 labels. While ID 130's prediction is incorrect and ID 179's is correct, this difference isn't meaningful: both predictions' winning confidences are are 0.01 ahead of the 2nd place confidences. However, in an attempt to explain this minute difference, ID 130's sample text itself and its capitalization makes it seem like an artistic reference (e.g. a song, album, etc.), leading to the model predicting `artistic_critique`.
+
+Finally, the lone sample of ID 89 is correctly predicted as `external_reference`. Unlike the other two pairs that involved `fandom_expressions` (which are an especially difficult for the model to classify) and the text itself was somewhat adversarial. However, ID 89's sample text clearly represents a "peripheral" question about buying a (presumably album-related) magazine.
+
+### Confidence Calibration
+
+Sourced from [`more_eval.ipynb`](./more_eval.ipynb) Section 2's generated graph.
+
+![Confidence Calibration Curve](./results/confidence_calibration.png "Confidence Calibration Curve")
+
+- The model's mean winning confidence ranges from just above 0.3 (fairly confused on all three labels) to around 0.9 (almost certain on a single choice).
+- The correctness trends upward with model confidence: the model is more likely to get a prediction correct with higher confidence. Thus, confidence scores do seem meaningful in reflecting model accuracy.
+- Out of the 10 points, 7 of them are above the perfect calibration line, signifying that the model is underconfident most of the time. An underconfident model may mean that:
+  - It hasn't learned the label patterns to the degree that it should've, leading it to be uncertain.
+  - The data is noisy, leading to blurry classification boundaries and distributed confidence scores.
 
 ### Classifier Reflection
 
 I was content with the classifier picking up on the differences between the news, gossip, and the "meta-info" around the album from the actual album discussion like lyrics, song similarities, artistic evolution, etc. It proves that the boundary clearly existed in the data itself, which was (for the most part) annotated consistently as per effective label definitions.
 
-I was also satisfied with the classifier identifying raw emotional and humorous posts from the rest. This required an advanced level of tone detection, which is very prone to annotation inconsistencies despite thorough definitions and is difficult even for an LLM to classify correctly (let alone an encoder model) - so, I went in expecting most misclassifications to be involving this type of posts. In that part I wasn't surprised by the results, but I was surprised that there weren't more than 5 misclassifications in total. This may be a testament to the annotations being consistent and/or the definitions being thorough, though there is definitely still room for improvement in both aspects.
+I was also satisfied with the classifier identifying raw emotional and humorous posts from the rest. This required an advanced level of tone detection, which is very prone to annotation inconsistencies despite thorough definitions and is difficult even for an LLM to classify correctly (let alone an encoder model) - so, I went in expecting most misclassifications involve this type of posts (especially because it is an underrepresented class in the dataset). In that part I wasn't surprised by the results, but I was surprised that there weren't more than 5 misclassifications in total. This may be a testament to the annotations being consistent and/or the definitions being thorough, though there is definitely still room for improvement in both aspects.
 
 ## Takeaways
 

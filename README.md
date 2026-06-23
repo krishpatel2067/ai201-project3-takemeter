@@ -10,7 +10,7 @@ Most of the data loading, training, and evaluation code was given to me at the s
 
 ## Demo
 
-[TODO]
+[**View on YouTube**](https://youtu.be/1_8e83czut8)
 
 ## Tech Stack
 

@@ -153,7 +153,7 @@ It's important to realize that this project does _not_ involve sentiment analysi
 
 **Agreement rate**: 27/39 (69%)
 
-Sourced from [`data_overview`](./data/data_overview.ipynb) Section 2. I reached out to a friend, sent them the [Labels](#labels) section of this file, and supplied them with a subset of the main data (IDs 1-40) with my labels removed for a blind test. The table below is a sample of annotation disagreements, sorted by ID for display purposes.
+Sourced from [`data_overview`](./data/data_overview.ipynb) Section 2. I reached out to [a friend](https://github.com/merkusvictory), sent them the [Labels](#labels) section of this file, and supplied them with a subset of the main data (IDs 1-40) with my labels removed for a blind test. The table below is a sample of annotation disagreements, sorted by ID for display purposes.
 
 Note: this was done at the very end of the project - after training and evaluation. So, this is a reflection-based test to reveal any lessons for future projects.
 
@@ -456,3 +456,7 @@ Despite the surprise divergence, the spec especially helped me in this project b
 - The data includes 213 entries, which isn't enough samples to sharpen the fine-tuned model's classification.
 - The posts in dataset are stored in plaintext, stripped of all formatting (e.g. bold, italics, links, quote blocks, etc.). This makes some edge-case posts more difficult to classify since the original version relied on formatting to convey meaning. For example, the sample with ID 190 ("My local KFC did this") actually linked an image via the word "this", which got completely lost during data collection, leaving a message looks incomplete.
 - The baseline model still outperforms the fine-tuned model. Perhaps a larger sample size or more consistent annotations (cross-checked by multiple annotators) may help.
+
+## Credits
+
+Special thanks to [Marcus Hilario](https://github.com/merkusvictory) for annotating about 40 samples of the dataset, so that I could analyze [Inter-Annotator Reliability](#inter-annotator-reliability).
